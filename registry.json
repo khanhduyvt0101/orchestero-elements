@@ -1,0 +1,801 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "orchestero-elements",
+  "homepage": "https://github.com/khanhduyvt0101/orchestero-elements",
+  "items": [
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Use Mobile",
+      "description": "Default shadcn Use Mobile hook.",
+      "files": [
+        {
+          "path": "hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Default shadcn Accordion component.",
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Default shadcn Alert Dialog component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Default shadcn Alert component.",
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Default shadcn Aspect Ratio component.",
+      "files": [
+        {
+          "path": "components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "Default shadcn Attachment component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Default shadcn Avatar component.",
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Default shadcn Badge component.",
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Default shadcn Breadcrumb component.",
+      "files": [
+        {
+          "path": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Default shadcn Bubble component.",
+      "files": [
+        {
+          "path": "components/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Default shadcn Button Group component.",
+      "registryDependencies": [
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Default shadcn Button component.",
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Default shadcn Calendar component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Default shadcn Card component.",
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Default shadcn Carousel component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Default shadcn Chart component.",
+      "files": [
+        {
+          "path": "components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Default shadcn Checkbox component.",
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Default shadcn Collapsible component.",
+      "files": [
+        {
+          "path": "components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Default shadcn Combobox component.",
+      "registryDependencies": [
+        "button",
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Default shadcn Command component.",
+      "registryDependencies": [
+        "dialog",
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Default shadcn Context Menu component.",
+      "files": [
+        {
+          "path": "components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Default shadcn Dialog component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "Default shadcn Direction component.",
+      "files": [
+        {
+          "path": "components/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Default shadcn Drawer component.",
+      "files": [
+        {
+          "path": "components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Default shadcn Dropdown Menu component.",
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Default shadcn Empty component.",
+      "files": [
+        {
+          "path": "components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Default shadcn Field component.",
+      "registryDependencies": [
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Default shadcn Hover Card component.",
+      "files": [
+        {
+          "path": "components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Default shadcn Input Group component.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input Otp",
+      "description": "Default shadcn Input Otp component.",
+      "files": [
+        {
+          "path": "components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Default shadcn Input component.",
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "Default shadcn Item component.",
+      "registryDependencies": [
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Default shadcn Kbd component.",
+      "files": [
+        {
+          "path": "components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Default shadcn Label component.",
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Default shadcn Marker component.",
+      "files": [
+        {
+          "path": "components/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Default shadcn Menubar component.",
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "Default shadcn Message Scroller component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Default shadcn Message component.",
+      "files": [
+        {
+          "path": "components/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "Default shadcn Native Select component.",
+      "files": [
+        {
+          "path": "components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Default shadcn Navigation Menu component.",
+      "files": [
+        {
+          "path": "components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Default shadcn Pagination component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Default shadcn Popover component.",
+      "files": [
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Default shadcn Progress component.",
+      "files": [
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Default shadcn Radio Group component.",
+      "files": [
+        {
+          "path": "components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Default shadcn Resizable component.",
+      "files": [
+        {
+          "path": "components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Default shadcn Scroll Area component.",
+      "files": [
+        {
+          "path": "components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Default shadcn Select component.",
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Default shadcn Separator component.",
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Default shadcn Sheet component.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Default shadcn Sidebar component.",
+      "registryDependencies": [
+        "button",
+        "input",
+        "separator",
+        "sheet",
+        "skeleton",
+        "tooltip",
+        "use-mobile"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Default shadcn Skeleton component.",
+      "files": [
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Default shadcn Slider component.",
+      "files": [
+        {
+          "path": "components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Default shadcn Sonner component.",
+      "files": [
+        {
+          "path": "components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Default shadcn Spinner component.",
+      "files": [
+        {
+          "path": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Default shadcn Switch component.",
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Default shadcn Table component.",
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Default shadcn Tabs component.",
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Default shadcn Textarea component.",
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Default shadcn Toggle Group component.",
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Default shadcn Toggle component.",
+      "files": [
+        {
+          "path": "components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Default shadcn Tooltip component.",
+      "files": [
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
