@@ -1,0 +1,38 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.gitkeep": true,
+    "**/.next": true,
+    "**/build": true,
+    "**/coverage": true,
+    "**/node_modules": true,
+    "**/out": true,
+    "**/*.tsbuildinfo": true,
+    "next-env.d.ts": true,
+    "public/*.json": true,
+    "public/r": true
+  },
+  "search.exclude": {
+    "**/.next": true,
+    "**/build": true,
+    "**/coverage": true,
+    "**/node_modules": true,
+    "**/out": true,
+    "**/*.tsbuildinfo": true,
+    "public/*.json": true,
+    "public/r": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.next/**": true,
+    "**/build/**": true,
+    "**/coverage/**": true,
+    "**/node_modules/**": true,
+    "**/out/**": true,
+    "**/*.tsbuildinfo": true,
+    "public/*.json": true,
+    "public/r/**": true
+  }
+}
