@@ -2,6 +2,9 @@ import { readdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 const root = process.cwd()
+const siteConfig = JSON.parse(
+  await readFile(path.join(root, "site.config.json"), "utf8")
+)
 const uiDir = path.join(root, "components", "ui")
 const chatDir = path.join(root, "components", "chat")
 const hooksDir = path.join(root, "hooks")
@@ -151,8 +154,8 @@ const chatItems = await Promise.all(
 
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
-  name: "orchestero-elements",
-  homepage: "https://github.com/khanhduyvt0101/orchestero-elements",
+  name: siteConfig.name,
+  homepage: siteConfig.url,
   items: [...hookItems, ...uiItems, ...chatItems],
 }
 

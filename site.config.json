@@ -1,0 +1,10 @@
+{
+  "name": "orchestero-elements",
+  "title": "Orchestero Elements",
+  "namespace": "@orchestero",
+  "description": "The default shadcn base-nova component set and AI chat components packaged as a public registry for Orchestero projects.",
+  "url": "https://elements.orchestero.com",
+  "githubUrl": "https://github.com/khanhduyvt0101/orchestero-elements",
+  "registryUrl": "https://elements.orchestero.com/{name}.json",
+  "cdnRegistryUrl": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/{name}.json"
+}

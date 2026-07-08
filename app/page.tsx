@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
+import siteConfig from "@/site.config.json"
 
 const items = [
   "accordion",
@@ -91,11 +92,10 @@ export default function Page() {
           <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
             <div className="flex max-w-3xl flex-col gap-3">
               <h1 className="text-4xl font-semibold tracking-normal md:text-5xl">
-                orchestero-elements
+                {siteConfig.name}
               </h1>
               <p className="text-base leading-7 text-muted-foreground">
-                Current default shadcn components packaged as a source registry
-                and built JSON registry.
+                {siteConfig.description}
               </p>
             </div>
             <a
