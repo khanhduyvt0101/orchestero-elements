@@ -1,23 +1,12 @@
-import {
-  copyFile,
-  mkdir,
-  readdir,
-  readFile,
-  rm,
-  writeFile,
-} from "node:fs/promises"
+import { readdir, readFile, rm, writeFile } from "node:fs/promises"
 import path from "node:path"
 
 const root = process.cwd()
 const siteConfig = JSON.parse(
   await readFile(path.join(root, "site.config.json"), "utf8")
 )
-const defaultStyle = siteConfig.defaultStyle ?? "default"
 const namespace = siteConfig.namespace ?? "@orchestero"
-const styleRegistryDir = path.join(root, "registry", "styles", defaultStyle)
-const styleUiDir = path.join(styleRegistryDir, "components", "ui")
-const styleChatDir = path.join(styleRegistryDir, "components", "chat")
-const styleHooksDir = path.join(styleRegistryDir, "hooks")
+const registryDir = path.join(root, "registry")
 const uiDir = path.join(root, "components", "ui")
 const chatDir = path.join(root, "components", "chat")
 const hooksDir = path.join(root, "hooks")
@@ -58,10 +47,6 @@ function namespacedDependency(dependency) {
   return `${namespace}/${dependency}`
 }
 
-function sourcePath(...segments) {
-  return path.posix.join(...segments)
-}
-
 const uiFiles = (await readdir(uiDir))
   .filter((file) => file.endsWith(".tsx"))
   .sort()
@@ -74,22 +59,7 @@ const hookFiles = (await readdir(hooksDir))
   .filter((file) => file.endsWith(".ts") || file.endsWith(".tsx"))
   .sort()
 
-await rm(styleRegistryDir, { recursive: true, force: true })
-await mkdir(styleUiDir, { recursive: true })
-await mkdir(styleChatDir, { recursive: true })
-await mkdir(styleHooksDir, { recursive: true })
-
-await Promise.all([
-  ...uiFiles.map((file) =>
-    copyFile(path.join(uiDir, file), path.join(styleUiDir, file))
-  ),
-  ...chatFiles.map((file) =>
-    copyFile(path.join(chatDir, file), path.join(styleChatDir, file))
-  ),
-  ...hookFiles.map((file) =>
-    copyFile(path.join(hooksDir, file), path.join(styleHooksDir, file))
-  ),
-])
+await rm(registryDir, { recursive: true, force: true })
 
 const hookItems = hookFiles.map((file) => {
   const name = file.replace(/\.(ts|tsx)$/, "")
@@ -101,7 +71,7 @@ const hookItems = hookFiles.map((file) => {
     description: `Orchestero ${titleFromName(name)} hook for shadcn-compatible projects.`,
     files: [
       {
-        path: sourcePath("hooks", file),
+        path: file,
         type: "registry:hook",
         target: `@hooks/${file}`,
       },
@@ -125,7 +95,7 @@ const uiItems = await Promise.all(
       ...(registryDependencies.length > 0 ? { registryDependencies } : {}),
       files: [
         {
-          path: sourcePath("components", "ui", file),
+          path: file,
           type: "registry:ui",
           target: `@ui/${file}`,
         },
@@ -182,13 +152,13 @@ const chatItems = await Promise.all(
       files:
         slug === "index"
           ? chatFiles.map((chatFile) => ({
-              path: sourcePath("components", "chat", chatFile),
+              path: chatFile,
               type: "registry:component",
               target: `@components/chat/${chatFile}`,
             }))
           : [
               {
-                path: sourcePath("components", "chat", file),
+                path: file,
                 type: "registry:component",
                 target: `@components/chat/${file}`,
               },
@@ -197,23 +167,45 @@ const chatItems = await Promise.all(
   })
 )
 
-const registry = {
+const uiRegistry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
-  name: `${siteConfig.name}-${defaultStyle}`,
-  homepage: siteConfig.url,
-  items: [...hookItems, ...uiItems, ...chatItems],
+  items: uiItems,
+}
+
+const chatRegistry = {
+  $schema: "https://ui.shadcn.com/schema/registry.json",
+  items: chatItems,
+}
+
+const hooksRegistry = {
+  $schema: "https://ui.shadcn.com/schema/registry.json",
+  items: hookItems,
 }
 
 const rootRegistry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: siteConfig.name,
   homepage: siteConfig.url,
-  include: [`registry/styles/${defaultStyle}/registry.json`],
+  include: [
+    "components/ui/registry.json",
+    "components/chat/registry.json",
+    "hooks/registry.json",
+  ],
 }
 
 await writeFile(
-  path.join(styleRegistryDir, "registry.json"),
-  `${JSON.stringify(registry, null, 2)}\n`
+  path.join(uiDir, "registry.json"),
+  `${JSON.stringify(uiRegistry, null, 2)}\n`
+)
+
+await writeFile(
+  path.join(chatDir, "registry.json"),
+  `${JSON.stringify(chatRegistry, null, 2)}\n`
+)
+
+await writeFile(
+  path.join(hooksDir, "registry.json"),
+  `${JSON.stringify(hooksRegistry, null, 2)}\n`
 )
 
 await writeFile(

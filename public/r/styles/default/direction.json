@@ -5,7 +5,7 @@
   "description": "Orchestero Direction component for product interfaces.",
   "files": [
     {
-      "path": "registry/styles/default/components/ui/direction.tsx",
+      "path": "components/ui/direction.tsx",
       "content": "\"use client\"\n\nexport {\n  DirectionProvider,\n  useDirection,\n} from \"@base-ui/react/direction-provider\"\n",
       "type": "registry:ui",
       "target": "@ui/direction.tsx"

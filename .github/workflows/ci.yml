@@ -28,7 +28,7 @@ jobs:
       - name: Validate registry
         run: |
           npm run registry:validate
-          npx shadcn@latest registry validate public/registry.json
+          npx shadcn@latest registry validate public/r/styles/default/registry.json
 
       - name: Typecheck
         run: npm run typecheck

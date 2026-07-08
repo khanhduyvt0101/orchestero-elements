@@ -3,6 +3,8 @@
   "name": "orchestero-elements",
   "homepage": "https://elements.orchestero.com",
   "include": [
-    "registry/styles/default/registry.json"
+    "components/ui/registry.json",
+    "components/chat/registry.json",
+    "hooks/registry.json"
   ]
 }

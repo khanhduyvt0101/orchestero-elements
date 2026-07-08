@@ -10,7 +10,7 @@ The repo is a Next.js app served at `https://elements.orchestero.com` with a can
 - Orchestero AI chat components under `components/chat`.
 - Supporting Orchestero hooks under `hooks`.
 - A generated source registry at `registry.json`.
-- A default style source registry at `registry/styles/default/registry.json`.
+- Generated source manifests at `components/ui/registry.json`, `components/chat/registry.json`, and `hooks/registry.json`.
 - Style-aware installable registry items in `public/r/styles/default/*.json`.
 - Next.js 16, React 19, Tailwind CSS v4, and shadcn registry tooling.
 
@@ -62,7 +62,7 @@ shareable and easy for humans or AI agents to inspect:
 - `/styles/macos` previews the planned macOS style.
 
 Add or update style metadata in `lib/registry-styles.ts`. When a style becomes
-installable, add its source registry under `registry/styles/{style}` and update
+installable, add a source manifest beside that style's source files and update
 the registry build pipeline to emit `public/r/styles/{style}/*.json`.
 
 ## Maintain the registry
@@ -79,6 +79,10 @@ Validate the source manifests and canonical directory output:
 npm run registry:validate
 npx shadcn@latest registry validate public/r/styles/default/registry.json
 ```
+
+The registry generator does not copy component source into a separate registry
+tree. It writes small manifest files beside the real source folders so component
+code stays single-source.
 
 Run app checks:
 

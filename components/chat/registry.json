@@ -1,0 +1,150 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "chat-composer",
+      "type": "registry:component",
+      "title": "Chat Composer",
+      "description": "Orchestero AI chat Composer component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "@orchestero/button",
+        "@orchestero/spinner",
+        "@orchestero/textarea"
+      ],
+      "files": [
+        {
+          "path": "composer.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/composer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-kit",
+      "type": "registry:component",
+      "title": "Chat Kit",
+      "description": "Orchestero AI chat component group for threads, messages, composers, and tool calls.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "@orchestero/avatar",
+        "@orchestero/badge",
+        "@orchestero/button",
+        "@orchestero/collapsible",
+        "@orchestero/empty",
+        "@orchestero/spinner",
+        "@orchestero/textarea"
+      ],
+      "files": [
+        {
+          "path": "composer.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/composer.tsx"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:component",
+          "target": "@components/chat/index.ts"
+        },
+        {
+          "path": "message.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/message.tsx"
+        },
+        {
+          "path": "thread.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/thread.tsx"
+        },
+        {
+          "path": "tool-call.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/tool-call.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-message",
+      "type": "registry:component",
+      "title": "Chat Message",
+      "description": "Orchestero AI chat Message component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "@orchestero/avatar",
+        "@orchestero/badge"
+      ],
+      "files": [
+        {
+          "path": "message.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-thread",
+      "type": "registry:component",
+      "title": "Chat Thread",
+      "description": "Orchestero AI chat Thread component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "@orchestero/empty"
+      ],
+      "files": [
+        {
+          "path": "thread.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/thread.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chat-tool-call",
+      "type": "registry:component",
+      "title": "Chat Tool Call",
+      "description": "Orchestero AI chat Tool Call component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "@orchestero/badge",
+        "@orchestero/collapsible"
+      ],
+      "files": [
+        {
+          "path": "tool-call.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/tool-call.tsx"
+        }
+      ]
+    }
+  ]
+}
