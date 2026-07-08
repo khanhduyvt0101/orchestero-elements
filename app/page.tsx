@@ -153,7 +153,7 @@ const checks = [
   "Flat JSON endpoints",
   "CORS headers for registry reads",
   "shadcn validation in CI",
-  "Vercel production deployment",
+  "Public hosting configured",
   "AI chat group under components/chat",
   "Directory entry prepared",
 ]
@@ -274,7 +274,7 @@ export default function Page() {
           </header>
 
           <div className="grid flex-1 items-center gap-12 py-14 md:grid-cols-[minmax(0,0.86fr)_minmax(360px,0.64fr)] md:py-20">
-            <div className="min-w-0 max-w-4xl">
+            <div className="max-w-4xl min-w-0">
               <h1 className="max-w-4xl text-5xl leading-[0.95] font-semibold tracking-normal text-white md:text-7xl lg:text-8xl">
                 {siteConfig.title}
               </h1>
@@ -318,7 +318,7 @@ export default function Page() {
                     200 OK
                   </span>
                 </div>
-                <pre className="min-w-0 max-w-full overflow-x-auto px-4 py-4 font-mono text-sm text-zinc-100">
+                <pre className="max-w-full min-w-0 overflow-x-auto px-4 py-4 font-mono text-sm text-zinc-100">
                   <code>npx shadcn@latest add @orchestero/chat-kit</code>
                 </pre>
               </div>
@@ -387,13 +387,13 @@ export default function Page() {
           <h2 className="mt-6 text-3xl font-semibold tracking-normal text-white md:text-5xl">
             AI chat components live as a first-class group.
           </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">
-                <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-sm text-zinc-200">
-                  components/chat
-                </code>{" "}
-                installs the thread, message, composer, and tool call primitives
-                together, while still letting projects pull each piece
-                independently.
+          <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">
+            <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-sm text-zinc-200">
+              components/chat
+            </code>{" "}
+            installs the thread, message, composer, and tool call primitives
+            together, while still letting projects pull each piece
+            independently.
           </p>
         </div>
         <div className="rounded-lg border border-white/10 bg-zinc-900 p-4 shadow-2xl shadow-black/30">
@@ -515,7 +515,7 @@ export default function Page() {
                 <Sparkles className="size-4 text-teal-200" />
                 Directory entry
               </div>
-              <pre className="min-w-0 max-w-full overflow-x-auto rounded-md bg-black/45 p-4 font-mono text-xs leading-6 text-zinc-300">
+              <pre className="max-w-full min-w-0 overflow-x-auto rounded-md bg-black/45 p-4 font-mono text-xs leading-6 text-zinc-300">
                 <code>{`{
   "name": "${siteConfig.namespace}",
   "homepage": "${siteConfig.url}",
