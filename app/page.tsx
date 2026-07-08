@@ -67,7 +67,17 @@ const items = [
   "use-mobile",
 ]
 
+const chatItems = [
+  "chat-kit",
+  "chat-composer",
+  "chat-message",
+  "chat-thread",
+  "chat-tool-call",
+]
+
 export default function Page() {
+  const totalItems = items.length + chatItems.length
+
   return (
     <main className="min-h-svh bg-background text-foreground">
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-10 md:px-10">
@@ -75,7 +85,8 @@ export default function Page() {
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="secondary">shadcn registry</Badge>
             <Badge variant="outline">base-nova</Badge>
-            <Badge variant="outline">61 items</Badge>
+            <Badge variant="outline">{totalItems} items</Badge>
+            <Badge variant="outline">chat group</Badge>
           </div>
           <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
             <div className="flex max-w-3xl flex-col gap-3">
@@ -115,12 +126,24 @@ export default function Page() {
           </section>
         </div>
 
+        <section className="flex flex-col gap-3">
+          <h2 className="text-lg font-medium">AI chat group</h2>
+          <pre className="overflow-x-auto rounded-md border bg-muted p-4 text-sm">
+            <code>npx shadcn@latest add @orchestero/chat-kit</code>
+          </pre>
+          <div className="flex flex-wrap gap-2">
+            {chatItems.map((item) => (
+              <Badge key={item} variant="secondary">
+                {item}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
         <section className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-lg font-medium">Registry items</h2>
-            <span className="text-sm text-muted-foreground">
-              {items.length}
-            </span>
+            <span className="text-sm text-muted-foreground">{totalItems}</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {items.map((item) => (

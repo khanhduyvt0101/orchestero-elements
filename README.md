@@ -8,6 +8,7 @@ The repo is a Next.js app so the built registry can be served from `public`, and
 
 - Next.js 16, React 19, Tailwind CSS v4, and shadcn `base-nova`.
 - All default shadcn UI components from `npx shadcn@latest add --all`.
+- AI chat app components under `components/chat`.
 - The `use-mobile` hook used by the sidebar component.
 - A generated source registry at `registry.json`.
 - Built installable registry items in `public/*.json`.
@@ -36,6 +37,21 @@ Then install by namespace:
 
 ```bash
 npx shadcn@latest add @orchestero/button
+```
+
+Install the AI chat component group:
+
+```bash
+npx shadcn@latest add @orchestero/chat-kit
+```
+
+Or install individual chat components:
+
+```bash
+npx shadcn@latest add @orchestero/chat-thread
+npx shadcn@latest add @orchestero/chat-message
+npx shadcn@latest add @orchestero/chat-composer
+npx shadcn@latest add @orchestero/chat-tool-call
 ```
 
 ## Maintain the registry

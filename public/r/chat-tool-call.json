@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chat-tool-call",
+  "title": "Chat Tool Call",
+  "description": "AI chat app Tool Call component.",
+  "registryDependencies": [
+    "badge",
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "components/chat/tool-call.tsx",
+      "content": "\"use client\"\n\nimport { ChevronDownIcon } from \"lucide-react\"\n\nimport { Badge } from \"@/components/ui/badge\"\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/components/ui/collapsible\"\nimport { cn } from \"@/lib/utils\"\n\ntype ChatToolCallState = \"pending\" | \"running\" | \"completed\" | \"error\"\n\nfunction formatValue(value: unknown) {\n  if (typeof value === \"string\") {\n    return value\n  }\n\n  return JSON.stringify(value, null, 2)\n}\n\nfunction ChatToolCall({\n  className,\n  ...props\n}: React.ComponentProps<typeof Collapsible>) {\n  return (\n    <Collapsible\n      data-slot=\"chat-tool-call\"\n      className={cn(\"rounded-xl border bg-muted/40\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction ChatToolCallHeader({\n  name,\n  state = \"pending\",\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof CollapsibleTrigger> & {\n  name: string\n  state?: ChatToolCallState\n}) {\n  return (\n    <CollapsibleTrigger\n      data-slot=\"chat-tool-call-header\"\n      className={cn(\n        \"group flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50\",\n        className\n      )}\n      {...props}\n    >\n      <span className=\"flex min-w-0 items-center gap-2\">\n        <span className=\"truncate font-medium\">{name}</span>\n        <Badge\n          variant={state === \"error\" ? \"destructive\" : \"secondary\"}\n          className=\"capitalize\"\n        >\n          {state}\n        </Badge>\n      </span>\n      {children ?? (\n        <ChevronDownIcon\n          aria-hidden=\"true\"\n          className=\"shrink-0 transition-transform group-data-[panel-open]:rotate-180\"\n        />\n      )}\n    </CollapsibleTrigger>\n  )\n}\n\nfunction ChatToolCallContent({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsibleContent>) {\n  return (\n    <CollapsibleContent\n      data-slot=\"chat-tool-call-content\"\n      className={cn(\"border-t px-3 py-3\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction ChatToolCallInput({\n  input,\n  className,\n  ...props\n}: React.ComponentProps<\"pre\"> & {\n  input: unknown\n}) {\n  return (\n    <pre\n      data-slot=\"chat-tool-call-input\"\n      className={cn(\n        \"max-h-72 overflow-auto rounded-lg bg-background p-3 text-xs leading-5 text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {formatValue(input)}\n    </pre>\n  )\n}\n\nfunction ChatToolCallOutput({\n  output,\n  error,\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  output?: React.ReactNode\n  error?: React.ReactNode\n}) {\n  return (\n    <div\n      data-slot=\"chat-tool-call-output\"\n      data-error={Boolean(error)}\n      className={cn(\n        \"rounded-lg bg-background p-3 text-sm data-[error=true]:text-destructive\",\n        className\n      )}\n      {...props}\n    >\n      {error ?? output}\n    </div>\n  )\n}\n\nexport {\n  ChatToolCall,\n  ChatToolCallContent,\n  ChatToolCallHeader,\n  ChatToolCallInput,\n  ChatToolCallOutput,\n  type ChatToolCallState,\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "group": "chat"
+  },
+  "categories": [
+    "ai",
+    "chat"
+  ],
+  "type": "registry:component"
+}

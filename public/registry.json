@@ -796,6 +796,142 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "chat-composer",
+      "type": "registry:component",
+      "title": "Chat Composer",
+      "description": "AI chat app Composer component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "button",
+        "spinner",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "components/chat/composer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chat-kit",
+      "type": "registry:component",
+      "title": "Chat Kit",
+      "description": "AI chat app component group for threads, messages, composers, and tool calls.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "collapsible",
+        "empty",
+        "spinner",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "components/chat/composer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chat/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chat/message.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chat/thread.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/chat/tool-call.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chat-message",
+      "type": "registry:component",
+      "title": "Chat Message",
+      "description": "AI chat app Message component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "avatar",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "components/chat/message.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chat-thread",
+      "type": "registry:component",
+      "title": "Chat Thread",
+      "description": "AI chat app Thread component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "empty"
+      ],
+      "files": [
+        {
+          "path": "components/chat/thread.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "chat-tool-call",
+      "type": "registry:component",
+      "title": "Chat Tool Call",
+      "description": "AI chat app Tool Call component.",
+      "categories": [
+        "ai",
+        "chat"
+      ],
+      "meta": {
+        "group": "chat"
+      },
+      "registryDependencies": [
+        "badge",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/chat/tool-call.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
