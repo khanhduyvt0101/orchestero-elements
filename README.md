@@ -26,7 +26,7 @@ Or add a namespaced registry to a consuming app's `components.json`:
 ```json
 {
   "registries": {
-    "@orchestero": "https://raw.githubusercontent.com/khanhduyvt0101/orchestero-elements/main/public/r/{name}.json"
+    "@orchestero": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/r/{name}.json"
   }
 }
 ```
