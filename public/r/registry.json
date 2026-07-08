@@ -5,933 +5,1003 @@
   "items": [
     {
       "name": "use-mobile",
-      "type": "registry:hook",
       "title": "Use Mobile",
       "description": "Orchestero Use Mobile hook for shadcn-compatible projects.",
       "files": [
         {
-          "path": "hooks/use-mobile.ts",
-          "type": "registry:hook"
+          "path": "registry/styles/default/hooks/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.ts"
         }
-      ]
+      ],
+      "type": "registry:hook"
     },
     {
       "name": "accordion",
-      "type": "registry:ui",
       "title": "Accordion",
       "description": "Orchestero Accordion component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/accordion.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "alert-dialog",
-      "type": "registry:ui",
       "title": "Alert Dialog",
       "description": "Orchestero Alert Dialog component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/alert-dialog.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "alert",
-      "type": "registry:ui",
       "title": "Alert",
       "description": "Orchestero Alert component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/alert.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "aspect-ratio",
-      "type": "registry:ui",
       "title": "Aspect Ratio",
       "description": "Orchestero Aspect Ratio component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/aspect-ratio.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "@ui/aspect-ratio.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "attachment",
-      "type": "registry:ui",
       "title": "Attachment",
       "description": "Orchestero Attachment component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/attachment.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/attachment.tsx",
+          "type": "registry:ui",
+          "target": "@ui/attachment.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "avatar",
-      "type": "registry:ui",
       "title": "Avatar",
       "description": "Orchestero Avatar component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/avatar.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "badge",
-      "type": "registry:ui",
       "title": "Badge",
       "description": "Orchestero Badge component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/badge.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "breadcrumb",
-      "type": "registry:ui",
       "title": "Breadcrumb",
       "description": "Orchestero Breadcrumb component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/breadcrumb.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "bubble",
-      "type": "registry:ui",
       "title": "Bubble",
       "description": "Orchestero Bubble component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/bubble.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/bubble.tsx",
+          "type": "registry:ui",
+          "target": "@ui/bubble.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "button-group",
-      "type": "registry:ui",
       "title": "Button Group",
       "description": "Orchestero Button Group component for product interfaces.",
       "registryDependencies": [
-        "separator"
+        "@orchestero/separator"
       ],
       "files": [
         {
-          "path": "components/ui/button-group.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button-group.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "button",
-      "type": "registry:ui",
       "title": "Button",
       "description": "Orchestero Button component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/button.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "calendar",
-      "type": "registry:ui",
       "title": "Calendar",
       "description": "Orchestero Calendar component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/calendar.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "card",
-      "type": "registry:ui",
       "title": "Card",
       "description": "Orchestero Card component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/card.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "carousel",
-      "type": "registry:ui",
       "title": "Carousel",
       "description": "Orchestero Carousel component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/carousel.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "chart",
-      "type": "registry:ui",
       "title": "Chart",
       "description": "Orchestero Chart component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/chart.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "checkbox",
-      "type": "registry:ui",
       "title": "Checkbox",
       "description": "Orchestero Checkbox component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/checkbox.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "collapsible",
-      "type": "registry:ui",
       "title": "Collapsible",
       "description": "Orchestero Collapsible component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/collapsible.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "combobox",
-      "type": "registry:ui",
       "title": "Combobox",
       "description": "Orchestero Combobox component for product interfaces.",
       "registryDependencies": [
-        "button",
-        "input-group"
+        "@orchestero/button",
+        "@orchestero/input-group"
       ],
       "files": [
         {
-          "path": "components/ui/combobox.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "command",
-      "type": "registry:ui",
       "title": "Command",
       "description": "Orchestero Command component for product interfaces.",
       "registryDependencies": [
-        "dialog",
-        "input-group"
+        "@orchestero/dialog",
+        "@orchestero/input-group"
       ],
       "files": [
         {
-          "path": "components/ui/command.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "context-menu",
-      "type": "registry:ui",
       "title": "Context Menu",
       "description": "Orchestero Context Menu component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/context-menu.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/context-menu.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "dialog",
-      "type": "registry:ui",
       "title": "Dialog",
       "description": "Orchestero Dialog component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/dialog.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "direction",
-      "type": "registry:ui",
       "title": "Direction",
       "description": "Orchestero Direction component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/direction.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/direction.tsx",
+          "type": "registry:ui",
+          "target": "@ui/direction.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "drawer",
-      "type": "registry:ui",
       "title": "Drawer",
       "description": "Orchestero Drawer component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/drawer.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/drawer.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "dropdown-menu",
-      "type": "registry:ui",
       "title": "Dropdown Menu",
       "description": "Orchestero Dropdown Menu component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/dropdown-menu.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "empty",
-      "type": "registry:ui",
       "title": "Empty",
       "description": "Orchestero Empty component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/empty.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/empty.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "field",
-      "type": "registry:ui",
       "title": "Field",
       "description": "Orchestero Field component for product interfaces.",
       "registryDependencies": [
-        "label",
-        "separator"
+        "@orchestero/label",
+        "@orchestero/separator"
       ],
       "files": [
         {
-          "path": "components/ui/field.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "hover-card",
-      "type": "registry:ui",
       "title": "Hover Card",
       "description": "Orchestero Hover Card component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/hover-card.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "input-group",
-      "type": "registry:ui",
       "title": "Input Group",
       "description": "Orchestero Input Group component for product interfaces.",
       "registryDependencies": [
-        "button",
-        "input",
-        "textarea"
+        "@orchestero/button",
+        "@orchestero/input",
+        "@orchestero/textarea"
       ],
       "files": [
         {
-          "path": "components/ui/input-group.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "input-otp",
-      "type": "registry:ui",
       "title": "Input Otp",
       "description": "Orchestero Input Otp component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/input-otp.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-otp.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "input",
-      "type": "registry:ui",
       "title": "Input",
       "description": "Orchestero Input component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/input.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "item",
-      "type": "registry:ui",
       "title": "Item",
       "description": "Orchestero Item component for product interfaces.",
       "registryDependencies": [
-        "separator"
+        "@orchestero/separator"
       ],
       "files": [
         {
-          "path": "components/ui/item.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/item.tsx",
+          "type": "registry:ui",
+          "target": "@ui/item.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "kbd",
-      "type": "registry:ui",
       "title": "Kbd",
       "description": "Orchestero Kbd component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/kbd.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "label",
-      "type": "registry:ui",
       "title": "Label",
       "description": "Orchestero Label component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/label.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "marker",
-      "type": "registry:ui",
       "title": "Marker",
       "description": "Orchestero Marker component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/marker.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/marker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/marker.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "menubar",
-      "type": "registry:ui",
       "title": "Menubar",
       "description": "Orchestero Menubar component for product interfaces.",
       "registryDependencies": [
-        "dropdown-menu"
+        "@orchestero/dropdown-menu"
       ],
       "files": [
         {
-          "path": "components/ui/menubar.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menubar.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "message-scroller",
-      "type": "registry:ui",
       "title": "Message Scroller",
       "description": "Orchestero Message Scroller component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/message-scroller.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/message-scroller.tsx",
+          "type": "registry:ui",
+          "target": "@ui/message-scroller.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "message",
-      "type": "registry:ui",
       "title": "Message",
       "description": "Orchestero Message component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/message.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/message.tsx",
+          "type": "registry:ui",
+          "target": "@ui/message.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "native-select",
-      "type": "registry:ui",
       "title": "Native Select",
       "description": "Orchestero Native Select component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/native-select.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/native-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/native-select.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "navigation-menu",
-      "type": "registry:ui",
       "title": "Navigation Menu",
       "description": "Orchestero Navigation Menu component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/navigation-menu.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "pagination",
-      "type": "registry:ui",
       "title": "Pagination",
       "description": "Orchestero Pagination component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/pagination.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "popover",
-      "type": "registry:ui",
       "title": "Popover",
       "description": "Orchestero Popover component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/popover.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "progress",
-      "type": "registry:ui",
       "title": "Progress",
       "description": "Orchestero Progress component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/progress.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "radio-group",
-      "type": "registry:ui",
       "title": "Radio Group",
       "description": "Orchestero Radio Group component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/radio-group.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "resizable",
-      "type": "registry:ui",
       "title": "Resizable",
       "description": "Orchestero Resizable component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/resizable.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/resizable.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "scroll-area",
-      "type": "registry:ui",
       "title": "Scroll Area",
       "description": "Orchestero Scroll Area component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/scroll-area.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "select",
-      "type": "registry:ui",
       "title": "Select",
       "description": "Orchestero Select component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/select.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "separator",
-      "type": "registry:ui",
       "title": "Separator",
       "description": "Orchestero Separator component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/separator.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "sheet",
-      "type": "registry:ui",
       "title": "Sheet",
       "description": "Orchestero Sheet component for product interfaces.",
       "registryDependencies": [
-        "button"
+        "@orchestero/button"
       ],
       "files": [
         {
-          "path": "components/ui/sheet.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "sidebar",
-      "type": "registry:ui",
       "title": "Sidebar",
       "description": "Orchestero Sidebar component for product interfaces.",
       "registryDependencies": [
-        "button",
-        "input",
-        "separator",
-        "sheet",
-        "skeleton",
-        "tooltip",
-        "use-mobile"
+        "@orchestero/button",
+        "@orchestero/input",
+        "@orchestero/separator",
+        "@orchestero/sheet",
+        "@orchestero/skeleton",
+        "@orchestero/tooltip",
+        "@orchestero/use-mobile"
       ],
       "files": [
         {
-          "path": "components/ui/sidebar.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "skeleton",
-      "type": "registry:ui",
       "title": "Skeleton",
       "description": "Orchestero Skeleton component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/skeleton.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "slider",
-      "type": "registry:ui",
       "title": "Slider",
       "description": "Orchestero Slider component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/slider.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "sonner",
-      "type": "registry:ui",
       "title": "Sonner",
       "description": "Orchestero Sonner component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/sonner.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/sonner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sonner.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "spinner",
-      "type": "registry:ui",
       "title": "Spinner",
       "description": "Orchestero Spinner component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/spinner.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "switch",
-      "type": "registry:ui",
       "title": "Switch",
       "description": "Orchestero Switch component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/switch.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "table",
-      "type": "registry:ui",
       "title": "Table",
       "description": "Orchestero Table component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/table.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "tabs",
-      "type": "registry:ui",
       "title": "Tabs",
       "description": "Orchestero Tabs component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/tabs.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "textarea",
-      "type": "registry:ui",
       "title": "Textarea",
       "description": "Orchestero Textarea component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/textarea.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "toggle-group",
-      "type": "registry:ui",
       "title": "Toggle Group",
       "description": "Orchestero Toggle Group component for product interfaces.",
       "registryDependencies": [
-        "toggle"
+        "@orchestero/toggle"
       ],
       "files": [
         {
-          "path": "components/ui/toggle-group.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "toggle",
-      "type": "registry:ui",
       "title": "Toggle",
       "description": "Orchestero Toggle component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/toggle.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "tooltip",
-      "type": "registry:ui",
       "title": "Tooltip",
       "description": "Orchestero Tooltip component for product interfaces.",
       "files": [
         {
-          "path": "components/ui/tooltip.tsx",
-          "type": "registry:ui"
+          "path": "registry/styles/default/components/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
         }
-      ]
+      ],
+      "type": "registry:ui"
     },
     {
       "name": "chat-composer",
-      "type": "registry:component",
       "title": "Chat Composer",
       "description": "Orchestero AI chat Composer component.",
-      "categories": [
-        "ai",
-        "chat"
+      "registryDependencies": [
+        "@orchestero/button",
+        "@orchestero/spinner",
+        "@orchestero/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/styles/default/components/chat/composer.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/composer.tsx"
+        }
       ],
       "meta": {
         "group": "chat"
       },
-      "registryDependencies": [
-        "button",
-        "spinner",
-        "textarea"
+      "categories": [
+        "ai",
+        "chat"
       ],
-      "files": [
-        {
-          "path": "components/chat/composer.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "type": "registry:component"
     },
     {
       "name": "chat-kit",
-      "type": "registry:component",
       "title": "Chat Kit",
       "description": "Orchestero AI chat component group for threads, messages, composers, and tool calls.",
-      "categories": [
-        "ai",
-        "chat"
+      "registryDependencies": [
+        "@orchestero/avatar",
+        "@orchestero/badge",
+        "@orchestero/button",
+        "@orchestero/collapsible",
+        "@orchestero/empty",
+        "@orchestero/spinner",
+        "@orchestero/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/styles/default/components/chat/composer.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/composer.tsx"
+        },
+        {
+          "path": "registry/styles/default/components/chat/index.ts",
+          "type": "registry:component",
+          "target": "@components/chat/index.ts"
+        },
+        {
+          "path": "registry/styles/default/components/chat/message.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/message.tsx"
+        },
+        {
+          "path": "registry/styles/default/components/chat/thread.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/thread.tsx"
+        },
+        {
+          "path": "registry/styles/default/components/chat/tool-call.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/tool-call.tsx"
+        }
       ],
       "meta": {
         "group": "chat"
       },
-      "registryDependencies": [
-        "avatar",
-        "badge",
-        "button",
-        "collapsible",
-        "empty",
-        "spinner",
-        "textarea"
+      "categories": [
+        "ai",
+        "chat"
       ],
-      "files": [
-        {
-          "path": "components/chat/composer.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/chat/index.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/chat/message.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/chat/thread.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "components/chat/tool-call.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "type": "registry:component"
     },
     {
       "name": "chat-message",
-      "type": "registry:component",
       "title": "Chat Message",
       "description": "Orchestero AI chat Message component.",
-      "categories": [
-        "ai",
-        "chat"
+      "registryDependencies": [
+        "@orchestero/avatar",
+        "@orchestero/badge"
+      ],
+      "files": [
+        {
+          "path": "registry/styles/default/components/chat/message.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/message.tsx"
+        }
       ],
       "meta": {
         "group": "chat"
       },
-      "registryDependencies": [
-        "avatar",
-        "badge"
+      "categories": [
+        "ai",
+        "chat"
       ],
-      "files": [
-        {
-          "path": "components/chat/message.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "type": "registry:component"
     },
     {
       "name": "chat-thread",
-      "type": "registry:component",
       "title": "Chat Thread",
       "description": "Orchestero AI chat Thread component.",
-      "categories": [
-        "ai",
-        "chat"
+      "registryDependencies": [
+        "@orchestero/empty"
+      ],
+      "files": [
+        {
+          "path": "registry/styles/default/components/chat/thread.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/thread.tsx"
+        }
       ],
       "meta": {
         "group": "chat"
       },
-      "registryDependencies": [
-        "empty"
+      "categories": [
+        "ai",
+        "chat"
       ],
-      "files": [
-        {
-          "path": "components/chat/thread.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "type": "registry:component"
     },
     {
       "name": "chat-tool-call",
-      "type": "registry:component",
       "title": "Chat Tool Call",
       "description": "Orchestero AI chat Tool Call component.",
-      "categories": [
-        "ai",
-        "chat"
+      "registryDependencies": [
+        "@orchestero/badge",
+        "@orchestero/collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/styles/default/components/chat/tool-call.tsx",
+          "type": "registry:component",
+          "target": "@components/chat/tool-call.tsx"
+        }
       ],
       "meta": {
         "group": "chat"
       },
-      "registryDependencies": [
-        "badge",
-        "collapsible"
+      "categories": [
+        "ai",
+        "chat"
       ],
-      "files": [
-        {
-          "path": "components/chat/tool-call.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "type": "registry:component"
     }
   ]
 }

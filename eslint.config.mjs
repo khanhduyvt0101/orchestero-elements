@@ -16,6 +16,8 @@ const eslintConfig = defineConfig([
     // Default ignores of eslint-config-next:
     ".next/**",
     ".vercel/**",
+    "registry/styles/**/components/**",
+    "registry/styles/**/hooks/**",
     "out/**",
     "build/**",
     "next-env.d.ts",

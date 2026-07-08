@@ -5,6 +5,10 @@
   "description": "Orchestero's shadcn-compatible component registry for product interfaces, AI chat experiences, and reusable design system primitives.",
   "url": "https://elements.orchestero.com",
   "githubUrl": "https://github.com/khanhduyvt0101/orchestero-elements",
-  "registryUrl": "https://elements.orchestero.com/{name}.json",
-  "cdnRegistryUrl": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/{name}.json"
+  "defaultStyle": "default",
+  "defaultStyleAliases": ["base-nova", "nova"],
+  "registryUrl": "https://elements.orchestero.com/r/styles/{style}/{name}.json",
+  "defaultRegistryUrl": "https://elements.orchestero.com/r/styles/default/{name}.json",
+  "legacyRegistryUrl": "https://elements.orchestero.com/{name}.json",
+  "cdnRegistryUrl": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/r/styles/default/{name}.json"
 }

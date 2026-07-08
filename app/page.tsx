@@ -138,9 +138,9 @@ const stats = [
     detail: "Orchestero UI primitives plus AI chat components.",
   },
   {
-    value: "/{name}.json",
-    label: "flat endpoint",
-    detail: "Directory-ready URLs for direct namespace installs.",
+    value: "default",
+    label: "active style",
+    detail: "Pixel and macOS styles are reserved for future releases.",
   },
   {
     value: "@orchestero",
@@ -150,12 +150,12 @@ const stats = [
 ]
 
 const checks = [
-  "Flat JSON endpoints",
+  "Style-aware JSON endpoints",
+  "Default style registry",
   "CORS headers for registry reads",
   "Registry schema validation in CI",
   "Public hosting configured",
   "AI chat group under components/chat",
-  "Directory entry prepared",
 ]
 
 const graphNodes = [
@@ -505,8 +505,8 @@ export default function Page() {
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">
               The public entry points are already shaped for the directory: open
-              source, namespace-based, flat, and ready to validate before an
-              upstream submission.
+              source, namespace-based, style-aware, and ready to validate before
+              an upstream submission.
             </p>
           </div>
           <div className="grid min-w-0 gap-4">

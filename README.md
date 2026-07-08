@@ -10,8 +10,9 @@ The repo is a Next.js app served at `https://elements.orchestero.com`, and it al
 - Orchestero AI chat components under `components/chat`.
 - Supporting Orchestero hooks under `hooks`.
 - A generated source registry at `registry.json`.
-- Flat installable registry items in `public/*.json`.
-- Mirrored registry items in `public/r/*.json`.
+- A default style source registry at `registry/styles/default/registry.json`.
+- Style-aware installable registry items in `public/r/styles/default/*.json`.
+- Compatibility mirrors in `public/*.json` and `public/r/*.json`.
 - Next.js 16, React 19, Tailwind CSS v4, and shadcn registry tooling.
 
 ## Install from this registry
@@ -28,7 +29,7 @@ For production use, add the Orchestero namespace to a consuming app's `component
 ```json
 {
   "registries": {
-    "@orchestero": "https://elements.orchestero.com/{name}.json"
+    "@orchestero": "https://elements.orchestero.com/r/styles/{style}/{name}.json"
   }
 }
 ```
@@ -54,12 +55,17 @@ npx shadcn@latest add @orchestero/chat-composer
 npx shadcn@latest add @orchestero/chat-tool-call
 ```
 
+The only implemented style today is `default`. The registry also aliases
+`base-nova` and `nova` to `default` so current shadcn projects resolve the
+namespace URL correctly. Future styles such as `pixel` and `macos` will live
+under `public/r/styles/{style}` when they are ready.
+
 If the custom domain is still propagating, use the CDN fallback:
 
 ```json
 {
   "registries": {
-    "@orchestero": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/{name}.json"
+    "@orchestero": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/r/styles/default/{name}.json"
   }
 }
 ```
@@ -77,6 +83,7 @@ Validate the source manifest and flat directory output:
 ```bash
 npm run registry:validate
 npx shadcn@latest registry validate public/registry.json
+npx shadcn@latest registry validate public/r/styles/default/registry.json
 ```
 
 Run app checks:
@@ -95,7 +102,7 @@ Submit this entry to `apps/v4/registry/directory.json` in `shadcn-ui/ui`:
 {
   "name": "@orchestero",
   "homepage": "https://elements.orchestero.com",
-  "url": "https://elements.orchestero.com/{name}.json",
+  "url": "https://elements.orchestero.com/r/styles/{style}/{name}.json",
   "description": "Orchestero's shadcn-compatible component registry for product interfaces, AI chat experiences, and reusable design system primitives.",
   "logo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><rect width='64' height='64' rx='16' fill='#09090B'/><rect x='4' y='4' width='56' height='56' rx='14' stroke='#FFFFFF' stroke-opacity='0.14' stroke-width='2'/><g transform='translate(14 14) scale(1.5)' stroke='#FAFAFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z'/><path d='M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z'/><path d='M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z'/><path d='M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z'/></g></svg>"
 }

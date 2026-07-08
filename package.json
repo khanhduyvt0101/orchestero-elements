@@ -16,8 +16,8 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "registry:generate": "node scripts/generate-registry.mjs",
-    "registry:build": "npm run registry:generate && shadcn build registry.json --output public/r && node scripts/sync-flat-registry.mjs",
-    "registry:validate": "npm run registry:generate && shadcn registry validate registry.json",
+    "registry:build": "npm run registry:generate && shadcn build registry.json --output public/r/styles/default && node scripts/sync-flat-registry.mjs",
+    "registry:validate": "npm run registry:generate && shadcn registry validate registry.json && shadcn registry validate registry/styles/default/registry.json",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

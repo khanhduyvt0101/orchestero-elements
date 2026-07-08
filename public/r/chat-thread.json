@@ -4,13 +4,14 @@
   "title": "Chat Thread",
   "description": "Orchestero AI chat Thread component.",
   "registryDependencies": [
-    "empty"
+    "@orchestero/empty"
   ],
   "files": [
     {
-      "path": "components/chat/thread.tsx",
+      "path": "registry/styles/default/components/chat/thread.tsx",
       "content": "import { MessageSquareIcon } from \"lucide-react\"\n\nimport {\n  Empty,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/ui/empty\"\nimport { cn } from \"@/lib/utils\"\n\nfunction ChatThread({ className, ...props }: React.ComponentProps<\"section\">) {\n  return (\n    <section\n      data-slot=\"chat-thread\"\n      className={cn(\"flex min-h-0 flex-1 flex-col bg-background\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction ChatThreadContent({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"chat-thread-content\"\n      role=\"log\"\n      aria-live=\"polite\"\n      aria-relevant=\"additions text\"\n      className={cn(\n        \"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-4 py-6\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction ChatThreadFooter({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"chat-thread-footer\"\n      className={cn(\"shrink-0 border-t bg-background p-4\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction ChatThreadEmpty({\n  title = \"Start a conversation\",\n  description = \"Send a message to begin chatting with the assistant.\",\n  icon,\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof Empty> & {\n  title?: React.ReactNode\n  description?: React.ReactNode\n  icon?: React.ReactNode\n}) {\n  return (\n    <Empty\n      data-slot=\"chat-thread-empty\"\n      className={cn(\"border-0\", className)}\n      {...props}\n    >\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          {icon ?? <MessageSquareIcon aria-hidden=\"true\" />}\n        </EmptyMedia>\n        <EmptyTitle>{title}</EmptyTitle>\n        <EmptyDescription>{description}</EmptyDescription>\n      </EmptyHeader>\n      {children}\n    </Empty>\n  )\n}\n\nexport { ChatThread, ChatThreadContent, ChatThreadEmpty, ChatThreadFooter }\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@components/chat/thread.tsx"
     }
   ],
   "meta": {

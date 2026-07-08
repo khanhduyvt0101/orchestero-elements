@@ -1,10 +1,23 @@
-import { readdir, readFile, writeFile } from "node:fs/promises"
+import {
+  copyFile,
+  mkdir,
+  readdir,
+  readFile,
+  rm,
+  writeFile,
+} from "node:fs/promises"
 import path from "node:path"
 
 const root = process.cwd()
 const siteConfig = JSON.parse(
   await readFile(path.join(root, "site.config.json"), "utf8")
 )
+const defaultStyle = siteConfig.defaultStyle ?? "default"
+const namespace = siteConfig.namespace ?? "@orchestero"
+const styleRegistryDir = path.join(root, "registry", "styles", defaultStyle)
+const styleUiDir = path.join(styleRegistryDir, "components", "ui")
+const styleChatDir = path.join(styleRegistryDir, "components", "chat")
+const styleHooksDir = path.join(styleRegistryDir, "hooks")
 const uiDir = path.join(root, "components", "ui")
 const chatDir = path.join(root, "components", "chat")
 const hooksDir = path.join(root, "hooks")
@@ -41,6 +54,14 @@ function dependenciesFromSource(source) {
   return unique(dependencies)
 }
 
+function namespacedDependency(dependency) {
+  return `${namespace}/${dependency}`
+}
+
+function sourcePath(...segments) {
+  return path.posix.join(...segments)
+}
+
 const uiFiles = (await readdir(uiDir))
   .filter((file) => file.endsWith(".tsx"))
   .sort()
@@ -53,6 +74,23 @@ const hookFiles = (await readdir(hooksDir))
   .filter((file) => file.endsWith(".ts") || file.endsWith(".tsx"))
   .sort()
 
+await rm(styleRegistryDir, { recursive: true, force: true })
+await mkdir(styleUiDir, { recursive: true })
+await mkdir(styleChatDir, { recursive: true })
+await mkdir(styleHooksDir, { recursive: true })
+
+await Promise.all([
+  ...uiFiles.map((file) =>
+    copyFile(path.join(uiDir, file), path.join(styleUiDir, file))
+  ),
+  ...chatFiles.map((file) =>
+    copyFile(path.join(chatDir, file), path.join(styleChatDir, file))
+  ),
+  ...hookFiles.map((file) =>
+    copyFile(path.join(hooksDir, file), path.join(styleHooksDir, file))
+  ),
+])
+
 const hookItems = hookFiles.map((file) => {
   const name = file.replace(/\.(ts|tsx)$/, "")
 
@@ -63,8 +101,9 @@ const hookItems = hookFiles.map((file) => {
     description: `Orchestero ${titleFromName(name)} hook for shadcn-compatible projects.`,
     files: [
       {
-        path: `hooks/${file}`,
+        path: sourcePath("hooks", file),
         type: "registry:hook",
+        target: `@hooks/${file}`,
       },
     ],
   }
@@ -74,9 +113,9 @@ const uiItems = await Promise.all(
   uiFiles.map(async (file) => {
     const name = file.replace(/\.tsx$/, "")
     const source = await readFile(path.join(uiDir, file), "utf8")
-    const registryDependencies = dependenciesFromSource(source).filter(
-      (dependency) => dependency !== name
-    )
+    const registryDependencies = dependenciesFromSource(source)
+      .filter((dependency) => dependency !== name)
+      .map(namespacedDependency)
 
     return {
       name,
@@ -86,8 +125,9 @@ const uiItems = await Promise.all(
       ...(registryDependencies.length > 0 ? { registryDependencies } : {}),
       files: [
         {
-          path: `components/ui/${file}`,
+          path: sourcePath("components", "ui", file),
           type: "registry:ui",
+          target: `@ui/${file}`,
         },
       ],
     }
@@ -118,10 +158,13 @@ const chatItems = await Promise.all(
             )
               .flat()
               .filter((dependency) => !dependency.startsWith("chat-"))
+              .map(namespacedDependency)
           )
-        : dependenciesFromSource(source).filter((dependency) => {
-            return dependency !== name && dependency !== "chat-index"
-          })
+        : dependenciesFromSource(source)
+            .filter((dependency) => {
+              return dependency !== name && dependency !== "chat-index"
+            })
+            .map(namespacedDependency)
 
     return {
       name,
@@ -139,13 +182,15 @@ const chatItems = await Promise.all(
       files:
         slug === "index"
           ? chatFiles.map((chatFile) => ({
-              path: `components/chat/${chatFile}`,
+              path: sourcePath("components", "chat", chatFile),
               type: "registry:component",
+              target: `@components/chat/${chatFile}`,
             }))
           : [
               {
-                path: `components/chat/${file}`,
+                path: sourcePath("components", "chat", file),
                 type: "registry:component",
+                target: `@components/chat/${file}`,
               },
             ],
     }
@@ -154,12 +199,24 @@ const chatItems = await Promise.all(
 
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
-  name: siteConfig.name,
+  name: `${siteConfig.name}-${defaultStyle}`,
   homepage: siteConfig.url,
   items: [...hookItems, ...uiItems, ...chatItems],
 }
 
+const rootRegistry = {
+  $schema: "https://ui.shadcn.com/schema/registry.json",
+  name: siteConfig.name,
+  homepage: siteConfig.url,
+  include: [`registry/styles/${defaultStyle}/registry.json`],
+}
+
+await writeFile(
+  path.join(styleRegistryDir, "registry.json"),
+  `${JSON.stringify(registry, null, 2)}\n`
+)
+
 await writeFile(
   path.join(root, "registry.json"),
-  `${JSON.stringify(registry, null, 2)}\n`
+  `${JSON.stringify(rootRegistry, null, 2)}\n`
 )
