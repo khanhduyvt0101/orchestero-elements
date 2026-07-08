@@ -2,7 +2,7 @@
 
 Orchestero's shadcn-compatible component registry for product interfaces, AI chat experiences, and reusable design system primitives.
 
-The repo is a Next.js app served at `https://elements.orchestero.com`, and it also works as a GitHub source registry through the root `registry.json`.
+The repo is a Next.js app served at `https://elements.orchestero.com` with a canonical shadcn registry endpoint at `https://elements.orchestero.com/r/styles/{style}/{name}.json`.
 
 ## What is included
 
@@ -12,19 +12,11 @@ The repo is a Next.js app served at `https://elements.orchestero.com`, and it al
 - A generated source registry at `registry.json`.
 - A default style source registry at `registry/styles/default/registry.json`.
 - Style-aware installable registry items in `public/r/styles/default/*.json`.
-- Compatibility mirrors in `public/*.json` and `public/r/*.json`.
 - Next.js 16, React 19, Tailwind CSS v4, and shadcn registry tooling.
 
 ## Install from this registry
 
-Use the GitHub registry form while developing directly from the repository:
-
-```bash
-npx shadcn@latest add khanhduyvt0101/orchestero-elements/button
-npx shadcn@latest add khanhduyvt0101/orchestero-elements/sidebar
-```
-
-For production use, add the Orchestero namespace to a consuming app's `components.json`:
+Add the Orchestero namespace to a consuming app's `components.json`:
 
 ```json
 {
@@ -55,20 +47,23 @@ npx shadcn@latest add @orchestero/chat-composer
 npx shadcn@latest add @orchestero/chat-tool-call
 ```
 
-The only implemented style today is `default`. The registry also aliases
-`base-nova` and `nova` to `default` so current shadcn projects resolve the
-namespace URL correctly. Future styles such as `pixel` and `macos` will live
-under `public/r/styles/{style}` when they are ready.
+The only implemented style today is `default`. Future styles such as `pixel`
+and `macos` are shown on the landing page as coming-soon style routes and will
+live under `public/r/styles/{style}` when they are ready.
 
-If the custom domain is still propagating, use the CDN fallback:
+## Style catalog
 
-```json
-{
-  "registries": {
-    "@orchestero": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/r/styles/default/{name}.json"
-  }
-}
-```
+The landing page uses route-based style previews so each visual direction is
+shareable and easy for humans or AI agents to inspect:
+
+- `/` shows the default landing page.
+- `/styles/default` is the canonical page for the current implemented style.
+- `/styles/pixel` previews the planned Pixel style.
+- `/styles/macos` previews the planned macOS style.
+
+Add or update style metadata in `lib/registry-styles.ts`. When a style becomes
+installable, add its source registry under `registry/styles/{style}` and update
+the registry build pipeline to emit `public/r/styles/{style}/*.json`.
 
 ## Maintain the registry
 
@@ -78,11 +73,10 @@ Regenerate and build registry JSON after changing files in `components/ui`, `com
 npm run registry:build
 ```
 
-Validate the source manifest and flat directory output:
+Validate the source manifests and canonical directory output:
 
 ```bash
 npm run registry:validate
-npx shadcn@latest registry validate public/registry.json
 npx shadcn@latest registry validate public/r/styles/default/registry.json
 ```
 

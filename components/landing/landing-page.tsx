@@ -1,0 +1,846 @@
+import {
+  ArrowUpRight,
+  Bot,
+  Check,
+  CircleDot,
+  Code2,
+  Database,
+  Layers3,
+  MessageSquareText,
+  PackageCheck,
+  Route,
+  Search,
+  Sparkles,
+  Terminal,
+} from "lucide-react"
+import Link from "next/link"
+
+import { OrchesteroLogoMark } from "@/components/orchestero-logo"
+import { Badge } from "@/components/ui/badge"
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { cn } from "@/lib/utils"
+import {
+  defaultRegistryStyle,
+  getRegistryStyle,
+  getStyleStatusLabel,
+  registryStyles,
+  type RegistryStyle,
+} from "@/lib/registry-styles"
+import siteConfig from "@/site.config.json"
+
+const componentGroups = [
+  {
+    title: "Foundation",
+    icon: Layers3,
+    items: [
+      "accordion",
+      "alert",
+      "button",
+      "button-group",
+      "card",
+      "collapsible",
+      "separator",
+      "skeleton",
+      "spinner",
+      "tooltip",
+    ],
+  },
+  {
+    title: "Forms",
+    icon: CircleDot,
+    items: [
+      "checkbox",
+      "combobox",
+      "field",
+      "input",
+      "input-group",
+      "input-otp",
+      "label",
+      "radio-group",
+      "select",
+      "slider",
+      "switch",
+      "textarea",
+      "toggle",
+      "toggle-group",
+    ],
+  },
+  {
+    title: "Overlays",
+    icon: Route,
+    items: [
+      "alert-dialog",
+      "command",
+      "context-menu",
+      "dialog",
+      "direction",
+      "drawer",
+      "dropdown-menu",
+      "hover-card",
+      "menubar",
+      "popover",
+      "sheet",
+    ],
+  },
+  {
+    title: "Navigation",
+    icon: Search,
+    items: [
+      "breadcrumb",
+      "calendar",
+      "carousel",
+      "navigation-menu",
+      "pagination",
+      "resizable",
+      "scroll-area",
+      "sidebar",
+      "tabs",
+    ],
+  },
+  {
+    title: "Data & Media",
+    icon: Database,
+    items: [
+      "aspect-ratio",
+      "attachment",
+      "avatar",
+      "badge",
+      "bubble",
+      "chart",
+      "empty",
+      "item",
+      "kbd",
+      "marker",
+      "message",
+      "message-scroller",
+      "native-select",
+      "progress",
+      "sonner",
+      "table",
+      "use-mobile",
+    ],
+  },
+]
+
+const chatItems = [
+  "chat-kit",
+  "chat-composer",
+  "chat-message",
+  "chat-thread",
+  "chat-tool-call",
+]
+
+const checks = [
+  "Style-aware JSON endpoints",
+  "Default style registry",
+  "CORS headers for registry reads",
+  "Registry schema validation in CI",
+  "Public hosting configured",
+  "AI chat group under components/chat",
+]
+
+const graphNodes = [
+  { name: "button", x: "12%", y: "22%", tone: "primary" },
+  { name: "dialog", x: "34%", y: "13%", tone: "muted" },
+  { name: "chat-kit", x: "57%", y: "22%", tone: "accent" },
+  { name: "sidebar", x: "79%", y: "16%", tone: "muted" },
+  { name: "registry.json", x: "44%", y: "48%", tone: "core" },
+  { name: "table", x: "18%", y: "64%", tone: "muted" },
+  { name: "command", x: "70%", y: "61%", tone: "primary" },
+  { name: "tooltip", x: "85%", y: "78%", tone: "muted" },
+]
+
+const previewShellClass = {
+  default:
+    "border-white/10 bg-zinc-950 text-white shadow-black/40 [--preview-muted:#a1a1aa] [--preview-panel:rgba(255,255,255,0.06)]",
+  pixel:
+    "border-fuchsia-300/45 bg-neutral-950 text-white shadow-fuchsia-950/30 [--preview-muted:#d4d4d8] [--preview-panel:rgba(255,255,255,0.08)]",
+  macos:
+    "border-slate-200 bg-slate-50 text-slate-950 shadow-slate-400/20 [--preview-muted:#64748b] [--preview-panel:rgba(255,255,255,0.76)]",
+} as const
+
+const previewAccentClass = {
+  default: "bg-teal-300 text-zinc-950",
+  pixel: "bg-cyan-300 text-zinc-950",
+  macos: "bg-sky-500 text-white",
+} as const
+
+const previewSecondaryClass = {
+  default: "bg-lime-300 text-zinc-950",
+  pixel: "bg-yellow-300 text-zinc-950",
+  macos: "bg-emerald-500 text-white",
+} as const
+
+function getStats(selectedStyle: RegistryStyle) {
+  return [
+    {
+      value: "66",
+      label: "registry items",
+      detail: "Orchestero UI primitives plus AI chat components.",
+    },
+    {
+      value: selectedStyle.name,
+      label: "selected style",
+      detail:
+        selectedStyle.status === "available"
+          ? "This style is implemented and installable now."
+          : "This style route documents the planned design direction.",
+    },
+    {
+      value: `${registryStyles.length}`,
+      label: "style tracks",
+      detail: "Default ships today; Pixel and macOS are planned next.",
+    },
+  ]
+}
+
+function RegistryGraph() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      aria-hidden="true"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(94,234,212,0.18),transparent_30%),radial-gradient(circle_at_70%_30%,rgba(132,204,22,0.12),transparent_28%),linear-gradient(115deg,rgba(9,9,11,0.94),rgba(24,24,27,0.8)_48%,rgba(9,9,11,0.96))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:56px_56px] opacity-60" />
+      <div className="registry-orbit absolute top-1/2 left-1/2 h-[560px] w-[860px] -translate-x-1/2 -translate-y-1/2 rounded-[48px] border border-white/10 bg-white/[0.025] shadow-2xl shadow-black/50" />
+      <svg
+        className="absolute inset-0 h-full w-full opacity-75"
+        viewBox="0 0 1000 620"
+        preserveAspectRatio="none"
+      >
+        <path
+          className="registry-line"
+          d="M120 150 C260 90 360 260 440 300 S620 320 700 145 S860 150 900 500"
+        />
+        <path
+          className="registry-line registry-line-delay"
+          d="M180 430 C320 390 320 260 440 300 S620 360 800 170"
+        />
+        <path
+          className="registry-line registry-line-slow"
+          d="M230 170 C330 420 580 170 760 410"
+        />
+      </svg>
+      {graphNodes.map((node) => (
+        <div
+          key={node.name}
+          className={cn(
+            "absolute flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-medium shadow-2xl backdrop-blur-md",
+            node.tone === "core" &&
+              "border-teal-300/50 bg-teal-300/15 text-teal-50 shadow-teal-950/40",
+            node.tone === "accent" &&
+              "border-lime-300/50 bg-lime-300/15 text-lime-50 shadow-lime-950/40",
+            node.tone === "primary" &&
+              "border-white/25 bg-white/12 text-white shadow-black/30",
+            node.tone === "muted" &&
+              "border-white/15 bg-zinc-950/55 text-zinc-200 shadow-black/35"
+          )}
+          style={{ left: node.x, top: node.y }}
+        >
+          <span className="size-1.5 rounded-full bg-current" />
+          {node.name}
+        </div>
+      ))}
+      <div className="absolute right-6 bottom-8 hidden w-[420px] rounded-lg border border-white/15 bg-black/45 p-4 font-mono text-xs text-zinc-200 shadow-2xl shadow-black/40 backdrop-blur-xl md:block">
+        <div className="mb-3 flex items-center gap-2 text-zinc-400">
+          <Terminal className="size-3.5" />
+          <span>components.json</span>
+        </div>
+        <pre className="leading-6 whitespace-pre-wrap">
+          {`"@orchestero": "${siteConfig.registryUrl}"`}
+        </pre>
+      </div>
+    </div>
+  )
+}
+
+function StyleSwitcher({ selectedStyle }: { selectedStyle: RegistryStyle }) {
+  return (
+    <div className="mt-8 grid gap-3 sm:grid-cols-3" id="styles">
+      {registryStyles.map((style) => {
+        const isActive = selectedStyle.slug === style.slug
+
+        return (
+          <Link
+            key={style.slug}
+            href={style.href}
+            className={cn(
+              "min-w-0 rounded-lg border p-4 text-left transition",
+              "border-white/10 bg-white/[0.04] hover:border-teal-300/35 hover:bg-white/[0.08]",
+              isActive && "border-teal-300/45 bg-teal-300/10"
+            )}
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="font-medium text-white">{style.name}</div>
+              <Badge
+                variant="outline"
+                className={cn(
+                  "rounded-md border-white/15 text-[11px] text-zinc-300",
+                  style.status === "available" &&
+                    "border-teal-300/35 text-teal-100"
+                )}
+              >
+                {getStyleStatusLabel(style.status)}
+              </Badge>
+            </div>
+            <p className="mt-3 line-clamp-3 text-sm leading-6 text-zinc-400">
+              {style.description}
+            </p>
+            <div className="mt-4 font-mono text-xs text-zinc-500">
+              {style.href}
+            </div>
+          </Link>
+        )
+      })}
+    </div>
+  )
+}
+
+function StylePreview({ selectedStyle }: { selectedStyle: RegistryStyle }) {
+  const slug =
+    selectedStyle.slug in previewShellClass
+      ? (selectedStyle.slug as keyof typeof previewShellClass)
+      : defaultRegistryStyle.slug
+
+  return (
+    <div className="relative hidden min-h-[520px] items-center md:flex">
+      <div
+        className={cn(
+          "w-full rounded-lg border p-4 shadow-2xl backdrop-blur-xl",
+          previewShellClass[slug]
+        )}
+      >
+        <div className="flex items-center justify-between border-b border-current/10 pb-4">
+          <div>
+            <div className="text-sm font-medium">
+              {selectedStyle.name} style
+            </div>
+            <div className="mt-1 text-xs text-[color:var(--preview-muted)]">
+              {selectedStyle.preview.title}
+            </div>
+          </div>
+          <Badge variant="outline" className="border-current/20 text-current">
+            {getStyleStatusLabel(selectedStyle.status)}
+          </Badge>
+        </div>
+
+        {selectedStyle.slug === "macos" ? (
+          <div className="mt-5 rounded-lg border border-current/10 bg-white/70 p-4">
+            <div className="flex gap-2">
+              <span className="size-3 rounded-full bg-red-400" />
+              <span className="size-3 rounded-full bg-yellow-400" />
+              <span className="size-3 rounded-full bg-green-400" />
+            </div>
+            <div className="mt-5 grid gap-3">
+              <div className="rounded-md border border-slate-200 bg-white p-3">
+                <div className="h-2 w-32 rounded-full bg-slate-200" />
+                <div className="mt-4 h-2 w-48 rounded-full bg-slate-100" />
+              </div>
+              <div className="grid grid-cols-[1fr_88px] gap-3">
+                <div className="rounded-md border border-slate-200 bg-white p-3">
+                  <div className="h-16 rounded bg-slate-100" />
+                </div>
+                <div
+                  className={cn(
+                    "rounded-md p-3 text-xs font-medium",
+                    previewAccentClass[slug]
+                  )}
+                >
+                  Ask AI
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div
+            className={cn(
+              "mt-5 rounded-lg border border-current/10 p-4",
+              selectedStyle.slug === "pixel"
+                ? "bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:18px_18px]"
+                : "bg-white/[0.035]"
+            )}
+          >
+            <div className="grid grid-cols-[1fr_96px] gap-3">
+              <div className="rounded-md border border-current/10 bg-[color:var(--preview-panel)] p-3">
+                <div className="h-2 w-28 rounded-full bg-current/25" />
+                <div className="mt-4 space-y-2">
+                  <div className="h-2 rounded-full bg-current/10" />
+                  <div className="h-2 w-2/3 rounded-full bg-current/10" />
+                </div>
+              </div>
+              <div
+                className={cn(
+                  "rounded-md p-3 text-xs font-semibold",
+                  previewAccentClass[slug]
+                )}
+              >
+                Button
+              </div>
+            </div>
+            <div className="mt-3 grid grid-cols-3 gap-3">
+              <div
+                className={cn(
+                  "rounded-md px-3 py-5 text-center text-xs font-semibold",
+                  previewSecondaryClass[slug]
+                )}
+              >
+                Chat
+              </div>
+              <div className="rounded-md border border-current/10 bg-[color:var(--preview-panel)] px-3 py-5 text-center text-xs">
+                Dialog
+              </div>
+              <div className="rounded-md border border-current/10 bg-[color:var(--preview-panel)] px-3 py-5 text-center text-xs">
+                Table
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-5 overflow-hidden rounded-md border border-current/10 bg-black/45">
+          <div className="border-b border-white/10 px-3 py-2 font-mono text-xs text-zinc-400">
+            registry URL
+          </div>
+          <pre className="overflow-x-auto px-3 py-3 font-mono text-xs text-zinc-100">
+            <code>{selectedStyle.registryUrl}</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function StyleSystemSection({
+  selectedStyle,
+}: {
+  selectedStyle: RegistryStyle
+}) {
+  return (
+    <section className="border-y border-white/10 bg-zinc-900/70">
+      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-[0.82fr_1.18fr] md:px-10">
+        <div>
+          <h2 className="text-3xl font-semibold tracking-normal text-white md:text-4xl">
+            Choose a style route, then install the same component names.
+          </h2>
+          <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400">
+            Orchestero uses shadcn&apos;s style-aware registry pattern so each
+            future visual system can keep the same namespace and item names
+            while resolving through{" "}
+            <code className="rounded bg-white/10 px-1.5 py-1 font-mono text-sm text-zinc-200">
+              {"{style}"}
+            </code>
+            .
+          </p>
+        </div>
+        <div className="grid gap-4">
+          {registryStyles.map((style) => {
+            const isActive = selectedStyle.slug === style.slug
+
+            return (
+              <Link
+                key={style.slug}
+                href={style.href}
+                className={cn(
+                  "grid gap-4 rounded-lg border border-white/10 bg-zinc-950/55 p-4 transition sm:grid-cols-[140px_1fr]",
+                  "hover:border-teal-300/35 hover:bg-zinc-950",
+                  isActive && "border-teal-300/45 bg-teal-300/10"
+                )}
+              >
+                <div>
+                  <div className="text-lg font-semibold text-white">
+                    {style.name}
+                  </div>
+                  <div className="mt-2 font-mono text-xs text-zinc-500">
+                    {style.href}
+                  </div>
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge
+                      variant="outline"
+                      className={cn(
+                        "rounded-md border-white/15 text-zinc-300",
+                        style.status === "available" &&
+                          "border-teal-300/35 text-teal-100"
+                      )}
+                    >
+                      {getStyleStatusLabel(style.status)}
+                    </Badge>
+                    {isActive ? (
+                      <span className="text-xs text-teal-100">
+                        Current preview
+                      </span>
+                    ) : null}
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-zinc-400">
+                    {style.audience}
+                  </p>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function LandingPage({
+  selectedStyleSlug = defaultRegistryStyle.slug,
+}: {
+  selectedStyleSlug?: string
+}) {
+  const selectedStyle =
+    getRegistryStyle(selectedStyleSlug) ?? defaultRegistryStyle
+  const stats = getStats(selectedStyle)
+  const canonicalStyleRegistryPath = `/r/styles/${defaultRegistryStyle.slug}/registry.json`
+  const canonicalChatBundlePath = `/r/styles/${defaultRegistryStyle.slug}/chat-kit.json`
+  const totalItems =
+    componentGroups.reduce((count, group) => count + group.items.length, 0) +
+    chatItems.length
+
+  return (
+    <main className="min-h-svh overflow-x-hidden bg-zinc-950 text-white">
+      <section className="relative flex min-h-[92svh] overflow-hidden">
+        <RegistryGraph />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.96),rgba(9,9,11,0.68)_42%,rgba(9,9,11,0.2)_78%,rgba(9,9,11,0.78))]" />
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 pt-5 pb-10 md:px-10">
+          <header className="flex items-center justify-between gap-4 py-3">
+            <Link
+              href="/"
+              className="flex items-center gap-3 text-sm font-medium text-white"
+            >
+              <OrchesteroLogoMark className="size-8" />
+              {siteConfig.title}
+            </Link>
+            <nav className="hidden items-center gap-6 text-sm text-zinc-300 md:flex">
+              <a className="transition hover:text-white" href="#registry">
+                Registry
+              </a>
+              <a className="transition hover:text-white" href="#styles">
+                Styles
+              </a>
+              <a className="transition hover:text-white" href="#chat">
+                Chat
+              </a>
+              <a className="transition hover:text-white" href="#components">
+                Components
+              </a>
+            </nav>
+            <a
+              className={cn(
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "border-white/15 bg-white/10 text-white hover:bg-white/15 hover:text-white"
+              )}
+              href={siteConfig.githubUrl}
+            >
+              <ArrowUpRight className="size-3.5" />
+              GitHub
+            </a>
+          </header>
+
+          <div className="grid flex-1 items-center gap-12 py-14 md:grid-cols-[minmax(0,0.86fr)_minmax(360px,0.64fr)] md:py-20">
+            <div className="max-w-4xl min-w-0">
+              <h1 className="max-w-4xl text-5xl leading-[0.95] font-semibold tracking-normal text-white md:text-7xl lg:text-8xl">
+                {siteConfig.title}
+              </h1>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-balance text-zinc-300 md:text-xl">
+                Orchestero&apos;s shadcn-compatible directory registry for
+                product interfaces, AI chat experiences, and reusable design
+                system primitives, with a style catalog that starts with{" "}
+                <span className="font-medium text-white">
+                  {selectedStyle.name}
+                </span>{" "}
+                and expands into Pixel, macOS, and future Orchestero looks,
+                served from{" "}
+                <span className="font-mono text-teal-200">
+                  elements.orchestero.com
+                </span>
+                .
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  className={cn(
+                    buttonVariants({ variant: "default", size: "lg" }),
+                    "h-11 bg-white px-4 text-zinc-950 hover:bg-zinc-200"
+                  )}
+                  href={canonicalStyleRegistryPath}
+                >
+                  Open Registry
+                  <ArrowUpRight className="size-4" />
+                </a>
+                <a
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "lg" }),
+                    "h-11 border-white/15 bg-white/10 px-4 text-white hover:bg-white/15 hover:text-white"
+                  )}
+                  href={siteConfig.githubUrl}
+                >
+                  View GitHub
+                  <ArrowUpRight className="size-4" />
+                </a>
+              </div>
+              <div className="mt-8 max-w-3xl overflow-hidden rounded-lg border border-white/15 bg-black/55 shadow-2xl shadow-black/40 backdrop-blur">
+                <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs text-zinc-400">
+                  <span className="flex items-center gap-2">
+                    <Terminal className="size-3.5" />
+                    {selectedStyle.status === "available"
+                      ? "Install the selected style"
+                      : "Preview the planned style"}
+                  </span>
+                  <span className="hidden font-mono text-teal-200 sm:block">
+                    {getStyleStatusLabel(selectedStyle.status)}
+                  </span>
+                </div>
+                <pre className="max-w-full min-w-0 overflow-x-auto px-4 py-4 font-mono text-sm text-zinc-100">
+                  <code>
+                    {selectedStyle.status === "available"
+                      ? selectedStyle.installCommand
+                      : `# ${selectedStyle.name} style is coming soon`}
+                  </code>
+                </pre>
+              </div>
+              <StyleSwitcher selectedStyle={selectedStyle} />
+            </div>
+
+            <StylePreview selectedStyle={selectedStyle} />
+          </div>
+
+          <div
+            id="registry"
+            className="grid gap-3 rounded-lg border border-white/10 bg-white/[0.04] p-3 backdrop-blur md:grid-cols-3"
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className="px-4 py-3">
+                <div className="font-mono text-2xl font-semibold text-white">
+                  {stat.value}
+                </div>
+                <div className="mt-1 text-sm font-medium text-teal-100">
+                  {stat.label}
+                </div>
+                <p className="mt-2 text-sm leading-6 text-zinc-400">
+                  {stat.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <StyleSystemSection selectedStyle={selectedStyle} />
+
+      <section className="border-b border-white/10 bg-zinc-900/70">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-[0.8fr_1.2fr] md:px-10">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-normal text-white md:text-4xl">
+              Built for the shadcn directory shape.
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400">
+              The public surface is intentionally simple: one Orchestero
+              namespace, style-scoped JSON files, schema-validated registry
+              items, and direct install commands for consuming apps.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {checks.map((check) => (
+              <div
+                key={check}
+                className="flex items-center gap-3 rounded-lg border border-white/10 bg-zinc-950/55 px-4 py-3 text-sm text-zinc-200"
+              >
+                <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-teal-300/15 text-teal-200">
+                  <Check className="size-3.5" />
+                </span>
+                {check}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="chat"
+        className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[0.95fr_1.05fr] md:px-10"
+      >
+        <div className="flex flex-col justify-center">
+          <div className="flex size-11 items-center justify-center rounded-lg border border-lime-300/20 bg-lime-300/10 text-lime-200">
+            <Bot className="size-5" />
+          </div>
+          <h2 className="mt-6 text-3xl font-semibold tracking-normal text-white md:text-5xl">
+            AI chat components live as a first-class group.
+          </h2>
+          <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">
+            <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-sm text-zinc-200">
+              components/chat
+            </code>{" "}
+            installs Orchestero&apos;s thread, message, composer, and tool call
+            primitives together, while still letting projects pull each piece
+            independently.
+          </p>
+        </div>
+        <div className="rounded-lg border border-white/10 bg-zinc-900 p-4 shadow-2xl shadow-black/30">
+          <div className="rounded-md border border-white/10 bg-zinc-950">
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+              <div className="flex items-center gap-2 text-sm font-medium text-white">
+                <MessageSquareText className="size-4 text-lime-200" />
+                chat-kit
+              </div>
+              <Badge
+                variant="outline"
+                className="border-lime-300/25 text-lime-100"
+              >
+                group
+              </Badge>
+            </div>
+            <div className="space-y-3 p-4">
+              {chatItems.map((item, index) => (
+                <div
+                  key={item}
+                  className="flex items-center justify-between rounded-md border border-white/10 bg-white/[0.03] px-3 py-3"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-7 items-center justify-center rounded-md bg-white/10 font-mono text-xs text-zinc-300">
+                      {index + 1}
+                    </span>
+                    <span className="font-mono text-sm text-zinc-100">
+                      {item}.json
+                    </span>
+                  </div>
+                  <span className="text-xs text-zinc-500">ready</span>
+                </div>
+              ))}
+            </div>
+            <Separator className="bg-white/10" />
+            <pre className="overflow-x-auto px-4 py-4 font-mono text-xs leading-6 text-zinc-300">
+              <code>{`{
+  "categories": ["ai", "chat"],
+  "meta": { "group": "chat" }
+}`}</code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="components" className="bg-white text-zinc-950">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:px-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="text-3xl font-semibold tracking-normal md:text-5xl">
+                The Orchestero component surface, grouped for scanning.
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-600">
+                Components are owned and maintained in this repository,
+                installable one at a time, and organized by how builders reach
+                for them in Orchestero products.
+              </p>
+            </div>
+            <div className="font-mono text-sm text-zinc-500">
+              {totalItems} installable entries
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {componentGroups.map((group) => (
+              <Card
+                key={group.title}
+                className="rounded-lg border-zinc-200 bg-white shadow-none ring-0"
+              >
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-9 items-center justify-center rounded-lg bg-zinc-950 text-white">
+                      <group.icon className="size-4" />
+                    </span>
+                    <div>
+                      <CardTitle>{group.title}</CardTitle>
+                      <CardDescription>
+                        {group.items.length} entries
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <Badge
+                        key={item}
+                        variant="outline"
+                        className="rounded-md border-zinc-200 text-zinc-700"
+                      >
+                        {item}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-zinc-950">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[0.9fr_1.1fr] md:px-10">
+          <div className="min-w-0">
+            <div className="flex size-11 items-center justify-center rounded-lg border border-teal-300/20 bg-teal-300/10 text-teal-200">
+              <PackageCheck className="size-5" />
+            </div>
+            <h2 className="mt-6 text-3xl font-semibold tracking-normal text-white md:text-5xl">
+              Prepared for shadcn directory publishing when you are ready.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">
+              The public entry points are already shaped for the directory: open
+              source, namespace-based, style-aware, and ready to validate before
+              an upstream submission.
+            </p>
+          </div>
+          <div className="grid min-w-0 gap-4">
+            <div className="min-w-0 rounded-lg border border-white/10 bg-zinc-900 p-5">
+              <div className="mb-4 flex items-center gap-2 text-sm font-medium text-white">
+                <Sparkles className="size-4 text-teal-200" />
+                Directory entry
+              </div>
+              <pre className="max-w-full min-w-0 overflow-x-auto rounded-md bg-black/45 p-4 font-mono text-xs leading-6 text-zinc-300">
+                <code>{`{
+  "name": "${siteConfig.namespace}",
+  "homepage": "${siteConfig.url}",
+  "url": "${siteConfig.registryUrl}"
+}`}</code>
+              </pre>
+            </div>
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2">
+              <a
+                className="group min-w-0 rounded-lg border border-white/10 bg-white/[0.03] p-5 transition hover:border-teal-300/35 hover:bg-teal-300/10"
+                href={canonicalStyleRegistryPath}
+              >
+                <Code2 className="size-5 text-teal-200" />
+                <div className="mt-4 text-sm font-medium text-white">
+                  Default style registry
+                </div>
+                <div className="mt-2 font-mono text-xs text-zinc-500 group-hover:text-teal-100">
+                  {canonicalStyleRegistryPath}
+                </div>
+              </a>
+              <a
+                className="group min-w-0 rounded-lg border border-white/10 bg-white/[0.03] p-5 transition hover:border-lime-300/35 hover:bg-lime-300/10"
+                href={canonicalChatBundlePath}
+              >
+                <MessageSquareText className="size-5 text-lime-200" />
+                <div className="mt-4 text-sm font-medium text-white">
+                  Chat bundle
+                </div>
+                <div className="mt-2 font-mono text-xs text-zinc-500 group-hover:text-lime-100">
+                  {canonicalChatBundlePath}
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}

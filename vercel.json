@@ -47,17 +47,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/registry",
-      "destination": "/registry.json",
-      "permanent": false
-    },
-    {
-      "source": "/r",
-      "destination": "/r/registry.json",
-      "permanent": false
-    }
   ]
 }

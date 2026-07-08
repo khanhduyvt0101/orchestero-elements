@@ -6,9 +6,5 @@
   "url": "https://elements.orchestero.com",
   "githubUrl": "https://github.com/khanhduyvt0101/orchestero-elements",
   "defaultStyle": "default",
-  "defaultStyleAliases": ["base-nova", "nova"],
-  "registryUrl": "https://elements.orchestero.com/r/styles/{style}/{name}.json",
-  "defaultRegistryUrl": "https://elements.orchestero.com/r/styles/default/{name}.json",
-  "legacyRegistryUrl": "https://elements.orchestero.com/{name}.json",
-  "cdnRegistryUrl": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/r/styles/default/{name}.json"
+  "registryUrl": "https://elements.orchestero.com/r/styles/{style}/{name}.json"
 }
