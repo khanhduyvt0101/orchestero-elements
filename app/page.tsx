@@ -4,7 +4,6 @@ import {
   Check,
   CircleDot,
   Code2,
-  Component,
   Database,
   Layers3,
   MessageSquareText,
@@ -16,6 +15,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 
+import { OrchesteroLogoMark } from "@/components/orchestero-logo"
 import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import {
@@ -245,9 +245,7 @@ export default function Page() {
               href="/"
               className="flex items-center gap-3 text-sm font-medium text-white"
             >
-              <span className="flex size-8 items-center justify-center rounded-lg border border-white/15 bg-white/10">
-                <Component className="size-4" />
-              </span>
+              <OrchesteroLogoMark className="size-8" />
               {siteConfig.title}
             </Link>
             <nav className="hidden items-center gap-6 text-sm text-zinc-300 md:flex">
@@ -279,9 +277,9 @@ export default function Page() {
                 {siteConfig.title}
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-balance text-zinc-300 md:text-xl">
-                Orchestero&apos;s shadcn-compatible directory registry for product
-                interfaces, AI chat experiences, and reusable design system
-                primitives, served from{" "}
+                Orchestero&apos;s shadcn-compatible directory registry for
+                product interfaces, AI chat experiences, and reusable design
+                system primitives, served from{" "}
                 <span className="font-mono text-teal-200">
                   elements.orchestero.com
                 </span>

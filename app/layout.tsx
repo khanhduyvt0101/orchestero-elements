@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.title}`,
   },
   description: siteConfig.description,
+  manifest: "/manifest.webmanifest",
   alternates: {
     canonical: "/",
   },
@@ -33,6 +34,14 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     siteName: siteConfig.title,
     description: siteConfig.description,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   robots: {
     index: true,
