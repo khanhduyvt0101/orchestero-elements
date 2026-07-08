@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "marker",
   "title": "Marker",
-  "description": "Default shadcn Marker component.",
+  "description": "Orchestero Marker component for product interfaces.",
   "files": [
     {
       "path": "components/ui/marker.tsx",

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-otp",
   "title": "Input Otp",
-  "description": "Default shadcn Input Otp component.",
+  "description": "Orchestero Input Otp component for product interfaces.",
   "files": [
     {
       "path": "components/ui/input-otp.tsx",

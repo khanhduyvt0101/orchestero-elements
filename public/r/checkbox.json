@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "checkbox",
   "title": "Checkbox",
-  "description": "Default shadcn Checkbox component.",
+  "description": "Orchestero Checkbox component for product interfaces.",
   "files": [
     {
       "path": "components/ui/checkbox.tsx",

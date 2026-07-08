@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-group",
   "title": "Button Group",
-  "description": "Default shadcn Button Group component.",
+  "description": "Orchestero Button Group component for product interfaces.",
   "registryDependencies": [
     "separator"
   ],

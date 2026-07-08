@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input",
   "title": "Input",
-  "description": "Default shadcn Input component.",
+  "description": "Orchestero Input component for product interfaces.",
   "files": [
     {
       "path": "components/ui/input.tsx",

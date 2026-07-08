@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group",
   "title": "Radio Group",
-  "description": "Default shadcn Radio Group component.",
+  "description": "Orchestero Radio Group component for product interfaces.",
   "files": [
     {
       "path": "components/ui/radio-group.tsx",

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "popover",
   "title": "Popover",
-  "description": "Default shadcn Popover component.",
+  "description": "Orchestero Popover component for product interfaces.",
   "files": [
     {
       "path": "components/ui/popover.tsx",

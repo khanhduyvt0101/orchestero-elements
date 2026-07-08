@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible",
   "title": "Collapsible",
-  "description": "Default shadcn Collapsible component.",
+  "description": "Orchestero Collapsible component for product interfaces.",
   "files": [
     {
       "path": "components/ui/collapsible.tsx",

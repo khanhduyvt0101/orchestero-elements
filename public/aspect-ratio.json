@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "aspect-ratio",
   "title": "Aspect Ratio",
-  "description": "Default shadcn Aspect Ratio component.",
+  "description": "Orchestero Aspect Ratio component for product interfaces.",
   "files": [
     {
       "path": "components/ui/aspect-ratio.tsx",

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pagination",
   "title": "Pagination",
-  "description": "Default shadcn Pagination component.",
+  "description": "Orchestero Pagination component for product interfaces.",
   "registryDependencies": [
     "button"
   ],

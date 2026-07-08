@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-area",
   "title": "Scroll Area",
-  "description": "Default shadcn Scroll Area component.",
+  "description": "Orchestero Scroll Area component for product interfaces.",
   "files": [
     {
       "path": "components/ui/scroll-area.tsx",

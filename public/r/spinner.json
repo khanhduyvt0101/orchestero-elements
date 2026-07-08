@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner",
   "title": "Spinner",
-  "description": "Default shadcn Spinner component.",
+  "description": "Orchestero Spinner component for product interfaces.",
   "files": [
     {
       "path": "components/ui/spinner.tsx",

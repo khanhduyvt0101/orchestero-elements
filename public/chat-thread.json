@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chat-thread",
   "title": "Chat Thread",
-  "description": "AI chat app Thread component.",
+  "description": "Orchestero AI chat Thread component.",
   "registryDependencies": [
     "empty"
   ],

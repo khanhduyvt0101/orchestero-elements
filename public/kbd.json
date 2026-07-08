@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "kbd",
   "title": "Kbd",
-  "description": "Default shadcn Kbd component.",
+  "description": "Orchestero Kbd component for product interfaces.",
   "files": [
     {
       "path": "components/ui/kbd.tsx",

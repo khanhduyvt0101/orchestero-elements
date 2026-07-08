@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "native-select",
   "title": "Native Select",
-  "description": "Default shadcn Native Select component.",
+  "description": "Orchestero Native Select component for product interfaces.",
   "files": [
     {
       "path": "components/ui/native-select.tsx",

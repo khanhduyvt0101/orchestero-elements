@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "toggle",
   "title": "Toggle",
-  "description": "Default shadcn Toggle component.",
+  "description": "Orchestero Toggle component for product interfaces.",
   "files": [
     {
       "path": "components/ui/toggle.tsx",

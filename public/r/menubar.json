@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "menubar",
   "title": "Menubar",
-  "description": "Default shadcn Menubar component.",
+  "description": "Orchestero Menubar component for product interfaces.",
   "registryDependencies": [
     "dropdown-menu"
   ],

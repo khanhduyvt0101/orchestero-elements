@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "switch",
   "title": "Switch",
-  "description": "Default shadcn Switch component.",
+  "description": "Orchestero Switch component for product interfaces.",
   "files": [
     {
       "path": "components/ui/switch.tsx",

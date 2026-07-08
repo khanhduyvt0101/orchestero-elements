@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chat-kit",
   "title": "Chat Kit",
-  "description": "AI chat app component group for threads, messages, composers, and tool calls.",
+  "description": "Orchestero AI chat component group for threads, messages, composers, and tool calls.",
   "registryDependencies": [
     "avatar",
     "badge",

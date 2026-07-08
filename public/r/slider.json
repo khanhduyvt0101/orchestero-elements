@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider",
   "title": "Slider",
-  "description": "Default shadcn Slider component.",
+  "description": "Orchestero Slider component for product interfaces.",
   "files": [
     {
       "path": "components/ui/slider.tsx",

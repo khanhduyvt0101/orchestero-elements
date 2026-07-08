@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "table",
   "title": "Table",
-  "description": "Default shadcn Table component.",
+  "description": "Orchestero Table component for product interfaces.",
   "files": [
     {
       "path": "components/ui/table.tsx",

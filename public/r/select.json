@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select",
   "title": "Select",
-  "description": "Default shadcn Select component.",
+  "description": "Orchestero Select component for product interfaces.",
   "files": [
     {
       "path": "components/ui/select.tsx",

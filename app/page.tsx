@@ -135,7 +135,7 @@ const stats = [
   {
     value: "66",
     label: "registry items",
-    detail: "Default shadcn components plus AI chat primitives.",
+    detail: "Orchestero UI primitives plus AI chat components.",
   },
   {
     value: "/{name}.json",
@@ -143,16 +143,16 @@ const stats = [
     detail: "Directory-ready URLs for direct namespace installs.",
   },
   {
-    value: "base-nova",
-    label: "style source",
-    detail: "A clean mirror of the current shadcn default set.",
+    value: "@orchestero",
+    label: "namespace",
+    detail: "A public design system namespace for Orchestero projects.",
   },
 ]
 
 const checks = [
   "Flat JSON endpoints",
   "CORS headers for registry reads",
-  "shadcn validation in CI",
+  "Registry schema validation in CI",
   "Public hosting configured",
   "AI chat group under components/chat",
   "Directory entry prepared",
@@ -279,8 +279,9 @@ export default function Page() {
                 {siteConfig.title}
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-balance text-zinc-300 md:text-xl">
-                A public shadcn registry for default base-nova components and AI
-                chat building blocks, served from{" "}
+                Orchestero&apos;s shadcn-compatible directory registry for product
+                interfaces, AI chat experiences, and reusable design system
+                primitives, served from{" "}
                 <span className="font-mono text-teal-200">
                   elements.orchestero.com
                 </span>
@@ -352,12 +353,12 @@ export default function Page() {
         <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-[0.8fr_1.2fr] md:px-10">
           <div>
             <h2 className="text-3xl font-semibold tracking-normal text-white md:text-4xl">
-              Directory-ready from the root URL.
+              Built for the shadcn directory shape.
             </h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-zinc-400">
-              The public surface is intentionally simple: one namespace, flat
-              JSON files, stable Vercel hosting, and a CDN fallback for
-              propagation windows.
+              The public surface is intentionally simple: one Orchestero
+              namespace, flat JSON files, schema-validated registry items, and
+              direct install commands for consuming apps.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -391,8 +392,8 @@ export default function Page() {
             <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-sm text-zinc-200">
               components/chat
             </code>{" "}
-            installs the thread, message, composer, and tool call primitives
-            together, while still letting projects pull each piece
+            installs Orchestero&apos;s thread, message, composer, and tool call
+            primitives together, while still letting projects pull each piece
             independently.
           </p>
         </div>
@@ -444,12 +445,12 @@ export default function Page() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h2 className="text-3xl font-semibold tracking-normal md:text-5xl">
-                The default shadcn surface, grouped for scanning.
+                The Orchestero component surface, grouped for scanning.
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-600">
-                Components stay source-owned and installable one at a time, but
-                the landing page organizes the directory by how builders reach
-                for them.
+                Components are owned and maintained in this repository,
+                installable one at a time, and organized by how builders reach
+                for them in Orchestero products.
               </p>
             </div>
             <div className="font-mono text-sm text-zinc-500">
@@ -505,8 +506,9 @@ export default function Page() {
               Prepared for shadcn directory publishing when you are ready.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">
-              The public entry points are already shaped for the directory. The
-              upstream PR can wait until the custom domain is verified.
+              The public entry points are already shaped for the directory: open
+              source, namespace-based, flat, and ready to validate before an
+              upstream submission.
             </p>
           </div>
           <div className="grid min-w-0 gap-4">

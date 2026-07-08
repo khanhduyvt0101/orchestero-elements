@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "separator",
   "title": "Separator",
-  "description": "Default shadcn Separator component.",
+  "description": "Orchestero Separator component for product interfaces.",
   "files": [
     {
       "path": "components/ui/separator.tsx",

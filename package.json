@@ -1,6 +1,7 @@
 {
   "name": "orchestero-elements",
   "version": "0.0.1",
+  "description": "Orchestero's shadcn-compatible component registry.",
   "type": "module",
   "private": true,
   "license": "MIT",

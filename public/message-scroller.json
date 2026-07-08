@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "message-scroller",
   "title": "Message Scroller",
-  "description": "Default shadcn Message Scroller component.",
+  "description": "Orchestero Message Scroller component for product interfaces.",
   "registryDependencies": [
     "button"
   ],

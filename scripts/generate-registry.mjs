@@ -60,7 +60,7 @@ const hookItems = hookFiles.map((file) => {
     name,
     type: "registry:hook",
     title: titleFromName(name),
-    description: `Default shadcn ${titleFromName(name)} hook.`,
+    description: `Orchestero ${titleFromName(name)} hook for shadcn-compatible projects.`,
     files: [
       {
         path: `hooks/${file}`,
@@ -82,7 +82,7 @@ const uiItems = await Promise.all(
       name,
       type: "registry:ui",
       title: titleFromName(name),
-      description: `Default shadcn ${titleFromName(name)} component.`,
+      description: `Orchestero ${titleFromName(name)} component for product interfaces.`,
       ...(registryDependencies.length > 0 ? { registryDependencies } : {}),
       files: [
         {
@@ -129,8 +129,8 @@ const chatItems = await Promise.all(
       title: slug === "index" ? "Chat Kit" : `Chat ${titleFromName(slug)}`,
       description:
         slug === "index"
-          ? "AI chat app component group for threads, messages, composers, and tool calls."
-          : `AI chat app ${titleFromName(slug)} component.`,
+          ? "Orchestero AI chat component group for threads, messages, composers, and tool calls."
+          : `Orchestero AI chat ${titleFromName(slug)} component.`,
       categories: ["ai", "chat"],
       meta: {
         group: "chat",

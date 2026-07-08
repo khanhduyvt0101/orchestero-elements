@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert",
   "title": "Alert",
-  "description": "Default shadcn Alert component.",
+  "description": "Orchestero Alert component for product interfaces.",
   "files": [
     {
       "path": "components/ui/alert.tsx",

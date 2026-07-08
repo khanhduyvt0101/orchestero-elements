@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "carousel",
   "title": "Carousel",
-  "description": "Default shadcn Carousel component.",
+  "description": "Orchestero Carousel component for product interfaces.",
   "registryDependencies": [
     "button"
   ],

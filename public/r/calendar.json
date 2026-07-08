@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar",
   "title": "Calendar",
-  "description": "Default shadcn Calendar component.",
+  "description": "Orchestero Calendar component for product interfaces.",
   "registryDependencies": [
     "button"
   ],

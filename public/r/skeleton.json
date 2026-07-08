@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "skeleton",
   "title": "Skeleton",
-  "description": "Default shadcn Skeleton component.",
+  "description": "Orchestero Skeleton component for product interfaces.",
   "files": [
     {
       "path": "components/ui/skeleton.tsx",

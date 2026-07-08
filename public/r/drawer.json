@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "drawer",
   "title": "Drawer",
-  "description": "Default shadcn Drawer component.",
+  "description": "Orchestero Drawer component for product interfaces.",
   "files": [
     {
       "path": "components/ui/drawer.tsx",

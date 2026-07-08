@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group",
   "title": "Input Group",
-  "description": "Default shadcn Input Group component.",
+  "description": "Orchestero Input Group component for product interfaces.",
   "registryDependencies": [
     "button",
     "input",

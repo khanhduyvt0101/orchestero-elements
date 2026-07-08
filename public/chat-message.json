@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chat-message",
   "title": "Chat Message",
-  "description": "AI chat app Message component.",
+  "description": "Orchestero AI chat Message component.",
   "registryDependencies": [
     "avatar",
     "badge"

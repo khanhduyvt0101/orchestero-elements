@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "message",
   "title": "Message",
-  "description": "Default shadcn Message component.",
+  "description": "Orchestero Message component for product interfaces.",
   "files": [
     {
       "path": "components/ui/message.tsx",

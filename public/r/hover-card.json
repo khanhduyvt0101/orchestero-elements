@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hover-card",
   "title": "Hover Card",
-  "description": "Default shadcn Hover Card component.",
+  "description": "Orchestero Hover Card component for product interfaces.",
   "files": [
     {
       "path": "components/ui/hover-card.tsx",

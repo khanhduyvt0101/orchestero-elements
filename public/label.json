@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "label",
   "title": "Label",
-  "description": "Default shadcn Label component.",
+  "description": "Orchestero Label component for product interfaces.",
   "files": [
     {
       "path": "components/ui/label.tsx",

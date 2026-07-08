@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chat-composer",
   "title": "Chat Composer",
-  "description": "AI chat app Composer component.",
+  "description": "Orchestero AI chat Composer component.",
   "registryDependencies": [
     "button",
     "spinner",

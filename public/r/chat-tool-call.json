@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chat-tool-call",
   "title": "Chat Tool Call",
-  "description": "AI chat app Tool Call component.",
+  "description": "Orchestero AI chat Tool Call component.",
   "registryDependencies": [
     "badge",
     "collapsible"

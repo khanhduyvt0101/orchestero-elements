@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "field",
   "title": "Field",
-  "description": "Default shadcn Field component.",
+  "description": "Orchestero Field component for product interfaces.",
   "registryDependencies": [
     "label",
     "separator"

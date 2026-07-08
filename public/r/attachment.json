@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "attachment",
   "title": "Attachment",
-  "description": "Default shadcn Attachment component.",
+  "description": "Orchestero Attachment component for product interfaces.",
   "registryDependencies": [
     "button"
   ],

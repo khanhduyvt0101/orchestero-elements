@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "direction",
   "title": "Direction",
-  "description": "Default shadcn Direction component.",
+  "description": "Orchestero Direction component for product interfaces.",
   "files": [
     {
       "path": "components/ui/direction.tsx",

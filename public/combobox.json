@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox",
   "title": "Combobox",
-  "description": "Default shadcn Combobox component.",
+  "description": "Orchestero Combobox component for product interfaces.",
   "registryDependencies": [
     "button",
     "input-group"

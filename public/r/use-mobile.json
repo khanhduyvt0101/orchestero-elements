@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-mobile",
   "title": "Use Mobile",
-  "description": "Default shadcn Use Mobile hook.",
+  "description": "Orchestero Use Mobile hook for shadcn-compatible projects.",
   "files": [
     {
       "path": "hooks/use-mobile.ts",
