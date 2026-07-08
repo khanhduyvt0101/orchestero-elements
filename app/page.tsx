@@ -89,7 +89,7 @@ export default function Page() {
             </div>
             <a
               className={cn(buttonVariants({ variant: "default" }))}
-              href="/r/registry.json"
+              href="/registry.json"
             >
               Open Registry JSON
             </a>

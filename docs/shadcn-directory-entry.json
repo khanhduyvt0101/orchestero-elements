@@ -1,0 +1,7 @@
+{
+  "name": "@orchestero",
+  "homepage": "https://github.com/khanhduyvt0101/orchestero-elements",
+  "url": "https://cdn.jsdelivr.net/gh/khanhduyvt0101/orchestero-elements@main/public/{name}.json",
+  "description": "The default shadcn base-nova component set packaged as a public registry for Orchestero projects.",
+  "logo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'><rect width='24' height='24' rx='5' fill='var(--foreground)'/><path d='M6.5 12a5.5 5.5 0 1 1 11 0a5.5 5.5 0 0 1-11 0Z' stroke='var(--background)' stroke-width='2'/><path d='M12 6.5v11M6.5 12h11' stroke='var(--background)' stroke-width='1.8' stroke-linecap='round'/></svg>"
+}
