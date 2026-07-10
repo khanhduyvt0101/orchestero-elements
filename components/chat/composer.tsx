@@ -99,9 +99,9 @@ function ChatComposerSubmit({
 
 export {
   ChatComposer,
+  type ChatComposerStatus,
   ChatComposerSubmit,
   ChatComposerTextarea,
   ChatComposerToolbar,
   ChatComposerTools,
-  type ChatComposerStatus,
 }

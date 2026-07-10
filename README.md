@@ -29,22 +29,22 @@ Add the Orchestero namespace to a consuming app's `components.json`:
 Then install Orchestero components by namespace:
 
 ```bash
-npx shadcn@latest add @orchestero/button
+bunx --bun shadcn@latest add @orchestero/button
 ```
 
 Install the Orchestero AI chat component group:
 
 ```bash
-npx shadcn@latest add @orchestero/chat-kit
+bunx --bun shadcn@latest add @orchestero/chat-kit
 ```
 
 Or install individual Orchestero chat components:
 
 ```bash
-npx shadcn@latest add @orchestero/chat-thread
-npx shadcn@latest add @orchestero/chat-message
-npx shadcn@latest add @orchestero/chat-composer
-npx shadcn@latest add @orchestero/chat-tool-call
+bunx --bun shadcn@latest add @orchestero/chat-thread
+bunx --bun shadcn@latest add @orchestero/chat-message
+bunx --bun shadcn@latest add @orchestero/chat-composer
+bunx --bun shadcn@latest add @orchestero/chat-tool-call
 ```
 
 The only implemented style today is `default`. Future styles such as `pixel`
@@ -70,14 +70,14 @@ the registry build pipeline to emit `public/r/styles/{style}/*.json`.
 Regenerate and build registry JSON after changing files in `components/ui`, `components/chat`, or `hooks`:
 
 ```bash
-npm run registry:build
+bun run registry:build
 ```
 
 Validate the source manifests and canonical directory output:
 
 ```bash
-npm run registry:validate
-npx shadcn@latest registry validate public/r/styles/default/registry.json
+bun run registry:validate
+bunx --bun shadcn@latest registry validate public/r/styles/default/registry.json
 ```
 
 The registry generator does not copy component source into a separate registry
@@ -87,9 +87,9 @@ code stays single-source.
 Run app checks:
 
 ```bash
-npm run typecheck
-npm run lint
-npm run build
+bun run typecheck
+bun run lint
+bun run build
 ```
 
 ## shadcn directory entry

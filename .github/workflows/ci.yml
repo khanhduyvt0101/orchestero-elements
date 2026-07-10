@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -13,28 +16,71 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 20
-          cache: npm
+          bun-version: 1.3.10
 
       - name: Install dependencies
-        run: npm ci
+        run: bun ci
 
       - name: Build registry
-        run: npm run registry:build
+        run: bun run registry:build
 
       - name: Validate registry
         run: |
-          npm run registry:validate
-          npx shadcn@latest registry validate public/r/styles/default/registry.json
+          bun run registry:validate
+          bunx --bun shadcn@latest registry validate public/r/styles/default/registry.json
 
       - name: Typecheck
-        run: npm run typecheck
+        run: bun run typecheck
 
-      - name: Lint
-        run: npm run lint
+      - name: Check code quality
+        run: bun run check
 
       - name: Build app
-        run: npm run build
+        run: bun run build
+
+  release:
+    name: Release to Vercel
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    concurrency:
+      group: vercel-production
+      cancel-in-progress: true
+    environment:
+      name: Production
+      url: ${{ steps.deploy.outputs.url }}
+    env:
+      VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_CLI_VERSION: 55.0.0
+    steps:
+      - name: Checkout validated commit
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.10
+
+      - name: Install dependencies
+        run: bun ci
+
+      - name: Install pinned Vercel CLI
+        run: bun install --global "vercel@${VERCEL_CLI_VERSION}"
+
+      - name: Pull production environment
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build production artifact
+        run: vercel build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy validated artifact
+        id: deploy
+        run: |
+          deployment_url="$(vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN")"
+          echo "url=$deployment_url" >> "$GITHUB_OUTPUT"
+          echo "Deployed $deployment_url"

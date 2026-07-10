@@ -30,7 +30,7 @@ export const registryStyles = [
       "The current Orchestero baseline: crisp shadcn-compatible primitives, AI chat pieces, and production-ready registry items.",
     audience:
       "Best for SaaS dashboards, AI products, admin tools, and teams that want the most stable Orchestero component surface today.",
-    installCommand: "npx shadcn@latest add @orchestero/chat-kit",
+    installCommand: "bunx --bun shadcn@latest add @orchestero/chat-kit",
     preview: {
       title: "Quiet product interface",
       surface: "bg-zinc-950 text-white border-white/10",
@@ -48,7 +48,7 @@ export const registryStyles = [
       "A sharper, grid-forward treatment planned for playful builders, creative tools, and retro-inspired AI interfaces.",
     audience:
       "Best for expressive products that still need installable, shadcn-shaped components instead of one-off visual experiments.",
-    installCommand: "npx shadcn@latest add @orchestero/chat-kit",
+    installCommand: "bunx --bun shadcn@latest add @orchestero/chat-kit",
     preview: {
       title: "Hard-edge creative console",
       surface: "bg-neutral-950 text-white border-fuchsia-300/40",
@@ -66,7 +66,7 @@ export const registryStyles = [
       "A desktop-native direction planned for calm, high-density AI workspaces and command surfaces.",
     audience:
       "Best for apps that should feel familiar on desktop while keeping the same registry names and install workflow.",
-    installCommand: "npx shadcn@latest add @orchestero/chat-kit",
+    installCommand: "bunx --bun shadcn@latest add @orchestero/chat-kit",
     preview: {
       title: "Desktop workspace shell",
       surface: "bg-slate-50 text-slate-950 border-slate-200",
